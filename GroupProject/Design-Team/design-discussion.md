@@ -2,6 +2,8 @@
 
 ## Design 1 - Haochen
 
+![hzhang924](./images/design-hzhang924)
+
 ### Pros
 1. Job class has all the key fields.
 2. Simple and easy to understand design.
@@ -41,3 +43,7 @@
 1. Missing boolean to compare current job offer if it exists
 2. Location class would be nice to have. Location(city,state).
 3. User class should be renamed to Main Menu (causes confusion).
+
+## Team design
+
+## Summary
