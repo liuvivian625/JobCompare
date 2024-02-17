@@ -2,7 +2,7 @@
 
 ## Design 1 - Haochen
 
-![hzhang924](./images/design-hzhang924)
+![hzhang924](./images/design-hzhang924.png)
 
 ### Pros
 1. Job class has all the key fields.
