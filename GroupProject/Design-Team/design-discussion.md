@@ -15,6 +15,8 @@
 
 ## Design 2 - Jing
 
+![jliu3146](./images/design-jliu3146.png)
+
 ### Pros
 1. Lots of useful helper methods information like getCurrentJob().
 2. InputUtil can be useful in the future for custom user inputs.
@@ -25,6 +27,8 @@
 
 ## Design 3 - Timesh
 
+![tpatel327](./images/design-tpatel327.png)
+
 ### Pros
 1. UML shows relationships between classes.
 2. Low leveled and extensive. Can be modeled for final design.
@@ -34,6 +38,8 @@
 2. Confusion on jobOffers. Need list storage in Compare Jobs.
 
 ## Design 4 - Vineet
+
+![vbaburaj6](./images/design-vbaburaj6.png)
 
 ### Pros
 1. The flow of the UML design is good.
