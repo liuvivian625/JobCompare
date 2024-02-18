@@ -51,5 +51,12 @@
 3. User class should be renamed to Main Menu (causes confusion).
 
 ## Team design
+![team design](./images/design.png)
+There are quite a few commonalities between the final design and the individual designs such as everyone creating a Job object class and then having some sort of Main Menu.
+Both designs also had implementations of the weight class and a job rank/compare class. Everyone did implement their UML diagrams with object oriented programming in mind.
+
+There are a few important features we did add to our final design such as a GlobalStorage class which is where all jobs and job offers are stored. We also added a few extra classes like Location and a Util class that some group members had. The Util class contains methods that can be used throughout the application. We also improved the job ranking feature with a specific class and methods relating to calculating the job score. Overall we implemented a more abstract and object oriented approach that is easily readable and understandable.
 
 ## Summary
+
+The discussion highlights the importance of striking a balance between simplicity and extensibility in the design process. It underscores the necessity of considering future scalability and flexibility when architecting systems, reminding us of the significance of careful planning and foresight. We gained insights into which functionality would be part of the frontend or backend components in the context of the UML class diagram. These lessons helped enhance our design and will also help us in the future deliverables.
