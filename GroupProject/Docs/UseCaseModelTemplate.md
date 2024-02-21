@@ -1,18 +1,81 @@
 # Use Case Model
 
-*This is the template for your use case model. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
 **Author**: \<person or team name\>
 
 ## 1 Use Case Diagram
 
-*This section should contain a use case diagram with all the actors and use cases for the system, suitably connected.*
+![use case diagram](../Docs/images/use_case_diagram.png)
+
+https://lucid.app/lucidchart/a9a382d2-a9b2-4885-8212-69f17f09120f/edit?viewport_loc=332%2C-80%2C2452%2C1216%2C.Q4MUjXso07N&invitationId=inv_ee0cec7f-27a9-4faf-8ad2-5054acc159fa
 
 ## 2 Use Case Descriptions
 
-*For each use case in the use case diagram, this section should contain a description, with the following elements:*
+- Add Current Job
+    - Requirements: be shown a user interface to enter all the details of their current job.
+    - Pre-conditions: user has never saved a current job before, and all fields shown must be properly filled: Title, Company, Location (entered as city and state), Cost of living in the location (expressed as an index), Yearly salary, Yearly bonus, Number of stock option shares offered, Home Buying Program fund (one-time dollar amount up to 15% of Yearly Salary), Personal Choice Holidays (A single overall number of days from 0 to 20), Monthly Internet Stipend ($0 to $75 inclusive).
+    - Post-conditions: an Job object will be created and saved to GlobalStorage.currentJob with Job.isCurrentJob being set to true.
+    - Scenarios:
+        - Normal: users will see an alert to enter a current job, and users enter all the fields with valid values and the program proceeds.
+        - Exception: users enter an invalid value, and will receive alert regarding the correct format of the input.
 
-- *Requirements: High-level description of what the use case must allow the user to do.*
-- *Pre-conditions: Conditions that must be true before the use case is run.*
-- *Post-conditions Conditions that must be true once the use case is run.*
-- *Scenarios: Sequence of events that characterize the use case. This part may include multiple scenarios, for normal, alternate, and exceptional event sequences. These scenarios may be expressed as a list of steps in natural language or as sequence diagrams.*
+- Edit Current Job
+    - Requirements: be shown a user interface that contains all the information of their current job, and they are able to edit all the details of their current job and save the new one.
+    - Pre-conditions: user has saved his current job before
+    - Post-condition: an Job object will be created and saved to GlobalStorage.currentJob with Job.isCurrentJob being set to true, the old job information will be discarded.
+    - Scenarios:
+        - Normal: users will see an alert that indicating they are editing the current job, and users enter all the fields with valid values and the program proceeds.
+        - Exception: users enter an invalid value, and will receive alert regarding the correct format of the input.
+
+- Add Job Offer
+    - Requirements: be shown a user interface to edit all the details of their job offer.
+    - Pre-conditions: all fields shown must be properly filled: Title, Company, Location (entered as city and state), Cost of living in the location (expressed as an index), Yearly salary, Yearly bonus, Number of stock option shares offered, Home Buying Program fund (one-time dollar amount up to 15% of Yearly Salary), Personal Choice Holidays (A single overall number of days from 0 to 20), Monthly Internet Stipend ($0 to $75 inclusive).
+    - Post-condition: an Job object will be created and save to GlobalStorage.jobOffers with Job.isCurrentJob being set to false.
+    - Scenarios:
+        - Normal: users enter all the fields with valid values and the program proceeds.
+        - Exception: users enter an invalid value, and will receive alert regarding the correct format of the input.
+
+- Compare Offer with Current Job
+    - Requirements: be shown a user interface to compare all the details of their recently saved job offer with their current job.
+    - Pre-conditions: the offer user is editing currently has been saved, and their current job has been save, too.
+    - Post-condition: show a table comparing the two jobs, displaying, for each job: Title, Company, Location, Yearly salary adjusted for cost of living, Yearly bonus adjusted for cost of living, Number of Stock Option Shares Offered, Home Buying Program fund, Personal Choice Holidays, Monthly Internet Stipend
+    - Scenarios:
+        - Normal: user has saved the current editting job offer, and has saved current job, the program proceeds.
+        - Exception1: user has not saved the current editting offer, will receive alert to save the offer before proceeding.
+        - Exception2: user has not saved the current job, will receive alter to enter a current job before proceeding.
+
+- Adjust Comparison Settings
+    - Requirements: be shown a user interface to enter all the details of job comparison settings
+    - Pre-conditions: no.
+    - Post-condition: if no weights are assigned, all factors are considered equal
+    - Scenarios:
+        - Normal: users enter all the fields with valid values and the program proceeds.
+        - Alternative: users have not entered weights, all fields will be assigned with 1.
+
+- Rank All Job and Offers
+    - Requirements: be shown a list of job offers, displayed as Title and Company, ranked from best to worst, and including the current job (if present), clearly indicated.
+    - Pre-conditions: at least one job offer or current job has been saved.
+    - Post-condition: only title and company will be displayed, and the list will be sorted based on the formula AYS + AYB + (CSO/3) + HBP + (PCH * AYS / 260) + (MIS*12), where: 
+    AYS = yearly salary adjusted for cost of living,
+    AYB = yearly bonus adjusted for cost of living,
+    CSO = Company shares offered (assuming a 3-year vesting schedule and a price-per-share of $1),
+    HBP = Home Buying Program,
+    PCH = Personal Choice Holidays, 
+    MIS= Monthly Internet Stipend. When there's a beat, the offers will be sorted (TBD)
+    - Scenarios:
+        - Normal: user has saved at least one job offer, the program proceeds.
+        - Exception1: user has not saved any offer or current job, will receive alert to save at least one offer before proceeding.
+
+- Display Selected Two Jobs
+    - Requirements: be shown a user interface to select two jobs listed in "Rank All Job and Offers", and be shown a table comparing the two jobs
+    - Pre-conditions: at least two offers or current job are saved in system.
+    - Post-condition: show a table comparing the two jobs, displaying, for each job Title, Company, Location, Yearly salary adjusted for cost of living, Yearly bonus adjusted for cost of living, Number of Stock Option Shares Offered, Home Buying Program fund, Personal Choice Holidays, Monthly Internet Stipend
+    - Scenarios:
+        - Normal: user has saved at least two job offers or one offer one current job, the program proceeds.
+        - Exception: the number of offers user selected does not equals to two, will receive alter to select two offers before proceeding.
+
+- Return to Main
+    - Requirements: return to main page
+    - Pre-conditions: no.
+    - Post-condition: return to main page and all the in progress editting will be discarded
+    - Scenarios:
+        - Normal: user returns to main page.
