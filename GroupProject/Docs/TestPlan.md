@@ -47,7 +47,8 @@ For unit testing:
 - Use JUnit.
 
 For integration testing:
-- Use AndroidJUnitRunner to facilitate instrumented integration tests.
+- Use Espresso to facilitate instrumented tests.
+- Focus on user's interaction with each component.
 
 For system testing:
 - Use Espresso to automate user cases.
@@ -64,15 +65,17 @@ For system testing:
 | TC-103    | Validate "calculate job score" functionality | 1. call weight setters to set different weights 2. call getJobScore | Job scores are correctly changed to reflect weight change. | | | |
 | TC-104    | Validate "rank jobs" for job offers | 1. create three job offers 2. call rankJobs | A job list is returned and it is in right order from highest score to lowest score| | | |
 | TC-105    | Validate "rank jobs" for current job and job offers | 1. create a current job and two job offers 2. call rankJobs | A job list is returned and it is in right order from highest score to lowest score| | | |
+| TC-106    | Validate "rank jobs" for job offers | 1. create three job offers, two of them lacks salary information 2. call rankJobs | A job list with that one job containing salary information is returned | | | |
+| TC-107    | Error Messages | | | | |
 
 ### 2.2 Integregation Testing
 | Test Case | Purpose | Steps | Expected Result | Actual Result | Pass/Fail | Additional Info |
 |-----------|---------|-------|-----------------|---------------|-----------|----------------|
-| TC-201    | Validate integration between "enter job offers" and "compare job offers" | | | | |
-| TC-202    | Validate integration between "enter current job", "enter job offers", and "compare job offers" | | | | |
-| TC-203    | Validate integration between "adjust the comparison setting" and "compare job offers" | | | | |
-| TC-204    | Validate integration between "enter current job" and "edit current job" | | | | |
-
+| TC-201    | Validate integration between user input and "enter current job" | | | | |
+| TC-202    | Validate integration between user input and "edit current job" | | | | |
+| TC-203    | Validate integration between user input and "enter job offers" | | | | |
+| TC-204    | Validate integration between user input and "adjust the comparison setting" | | | | |
+| TC-205    | Validate integration between user selecting two jobs and compare | | | | |
 
 ### 2.3 System Testing
 | Test Case | Purpose | Steps | Expected Result | Actual Result | Pass/Fail | Additional Info |
