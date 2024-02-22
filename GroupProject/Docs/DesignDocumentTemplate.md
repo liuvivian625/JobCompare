@@ -54,3 +54,10 @@ The system will be built using Java 17, Android 13 SDK 33. The hardware for this
 
 ## 4 User Interface Design
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
+
+![Main Menu](./images/MainMenu.png)
+![Current Job Details](./images/CurrentJobDetails.png)
+![New Job Offer](./images/NewJobOffer.png)
+![Comparison Settings](./images/ComparisonSettings.png)
+![Compare Job](./images/CompareJob.png)
+![Job Comparison](./images/JobComparison.png)
