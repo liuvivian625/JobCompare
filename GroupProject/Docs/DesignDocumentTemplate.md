@@ -59,5 +59,5 @@ The system will be built using Java 17, Android 13 SDK 33. The hardware for this
 ![Current Job Details](./images/CurrentJobDetails.png)
 ![New Job Offer](./images/NewJobOffer.png)
 ![Comparison Settings](./images/ComparisonSettings.png)
-![Compare Job](./images/CompareJob.png)
+![Compare Job](./images/CompareJobs.png)
 ![Job Comparison](./images/JobComparison.png)
