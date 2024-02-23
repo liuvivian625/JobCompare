@@ -6,8 +6,6 @@
 
 ![use case diagram](../Docs/images/use_case_diagram.png)
 
-https://lucid.app/lucidchart/a9a382d2-a9b2-4885-8212-69f17f09120f/edit?viewport_loc=332%2C-80%2C2452%2C1216%2C.Q4MUjXso07N&invitationId=inv_ee0cec7f-27a9-4faf-8ad2-5054acc159fa
-
 ## 2 Use Case Descriptions
 
 - Add Current Job
@@ -21,7 +19,7 @@ https://lucid.app/lucidchart/a9a382d2-a9b2-4885-8212-69f17f09120f/edit?viewport_
 - Edit Current Job
     - Requirements: be shown a user interface that contains all the information of their current job, and they are able to edit all the details of their current job and save the new one.
     - Pre-conditions: user has saved his current job before
-    - Post-condition: an Job object will be created and saved to GlobalStorage.currentJob with Job.isCurrentJob being set to true, the old job information will be discarded.
+    - Post-condition: the original Job object in GlobalStorage.currentJob will be updated.
     - Scenarios:
         - Normal: users will see an alert that indicating they are editing the current job, and users enter all the fields with valid values and the program proceeds.
         - Exception: users enter an invalid value, and will receive alert regarding the correct format of the input.
@@ -34,10 +32,10 @@ https://lucid.app/lucidchart/a9a382d2-a9b2-4885-8212-69f17f09120f/edit?viewport_
         - Normal: users enter all the fields with valid values and the program proceeds.
         - Exception: users enter an invalid value, and will receive alert regarding the correct format of the input.
 
-- Compare Offer with Current Job
+- Display Offer with Current Job
     - Requirements: be shown a user interface to compare all the details of their recently saved job offer with their current job.
     - Pre-conditions: the offer user is editing currently has been saved, and their current job has been save, too.
-    - Post-condition: show a table comparing the two jobs, displaying, for each job: Title, Company, Location, Yearly salary adjusted for cost of living, Yearly bonus adjusted for cost of living, Number of Stock Option Shares Offered, Home Buying Program fund, Personal Choice Holidays, Monthly Internet Stipend
+    - Post-condition: show a table displaying the two jobs, for each job: Title, Company, Location, Yearly salary adjusted for cost of living, Yearly bonus adjusted for cost of living, Number of Stock Option Shares Offered, Home Buying Program fund, Personal Choice Holidays, Monthly Internet Stipend
     - Scenarios:
         - Normal: user has saved the current editting job offer, and has saved current job, the program proceeds.
         - Exception1: user has not saved the current editting offer, will receive alert to save the offer before proceeding.
@@ -60,7 +58,7 @@ https://lucid.app/lucidchart/a9a382d2-a9b2-4885-8212-69f17f09120f/edit?viewport_
     CSO = Company shares offered (assuming a 3-year vesting schedule and a price-per-share of $1),
     HBP = Home Buying Program,
     PCH = Personal Choice Holidays, 
-    MIS= Monthly Internet Stipend. When there's a beat, the offers will be sorted (TBD)
+    MIS= Monthly Internet Stipend.
     - Scenarios:
         - Normal: user has saved at least one job offer, the program proceeds.
         - Exception1: user has not saved any offer or current job, will receive alert to save at least one offer before proceeding.
@@ -71,7 +69,7 @@ https://lucid.app/lucidchart/a9a382d2-a9b2-4885-8212-69f17f09120f/edit?viewport_
     - Post-condition: show a table comparing the two jobs, displaying, for each job Title, Company, Location, Yearly salary adjusted for cost of living, Yearly bonus adjusted for cost of living, Number of Stock Option Shares Offered, Home Buying Program fund, Personal Choice Holidays, Monthly Internet Stipend
     - Scenarios:
         - Normal: user has saved at least two job offers or one offer one current job, the program proceeds.
-        - Exception: the number of offers user selected does not equals to two, will receive alter to select two offers before proceeding.
+        - Exception: the number of offers user selected less than two, will receive alter to select two offers before proceeding.
 
 - Return to Main
     - Requirements: return to main page
