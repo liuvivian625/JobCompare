@@ -34,9 +34,13 @@ The system will be built using Java 17, Android 13 SDK 33. The hardware for this
 
 *This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
 
+![class diagram](./images/Component_diagram.png)
+
 ### 2.2 Deployment Diagram
 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
+
+![class diagram](./images/Deployment_diagram.png)
 
 ## 3 Low-Level Design
 
