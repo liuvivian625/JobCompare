@@ -47,11 +47,12 @@ For unit testing:
 - Use JUnit.
 
 For integration testing:
-- Use Espresso to facilitate instrumented tests.
+- Use Espresso.
 - Focus on user's interaction with each component.
 
 For system testing:
-- Use Espresso to automate user cases.
+- Manual testing for navigation.
+- Use Espresso to test entire flow.
 
 ## 2 Test Cases
 
@@ -63,10 +64,8 @@ For system testing:
 | TC-101    | Validate "enter current job" functionality | 1. call current job setters 2. call saveJob 3. print currentJob| Current job is created and printed fields matches entries | | | |
 | TC-102    | Validate "enter job offers" | 1. call job offer setters 2. call saveJob 3. repeat to create another job offer 4. print job offer list | Job offers are correctly created and store in the list. | | | |
 | TC-103    | Validate "calculate job score" functionality | 1. call weight setters to set different weights 2. call getJobScore | Job scores are correctly changed to reflect weight change. | | | |
-| TC-104    | Validate "rank jobs" for job offers | 1. create three job offers 2. call rankJobs | A job list is returned and it is in right order from highest score to lowest score| | | |
-| TC-105    | Validate "rank jobs" for current job and job offers | 1. create a current job and two job offers 2. call rankJobs | A job list is returned and it is in right order from highest score to lowest score| | | |
-| TC-106    | Validate "rank jobs" for job offers | 1. create three job offers, two of them lacks salary information 2. call rankJobs | A job list with that one job containing salary information is returned | | | |
-| TC-107    | Error Messages | | | | |
+| TC-104    | Validate "rank jobs" for current job and job offers | 1. create a current job and two job offers 2. call rankJobs | A job list is returned and it is in right order from highest score to lowest score| | | |
+| TC-105    | Validate "display jobs" | 1. create a current job and a job offer 2. call displayJobs | Attributes with some adjustments of current job and job offer are returned| | | |
 
 ### 2.2 Integregation Testing
 | Test Case | Purpose | Steps | Expected Result | Actual Result | Pass/Fail | Additional Info |
@@ -76,6 +75,10 @@ For system testing:
 | TC-203    | Validate integration between user input and "enter job offers" | | | | |
 | TC-204    | Validate integration between user input and "adjust the comparison setting" | | | | |
 | TC-205    | Validate integration between user selecting two jobs and compare | | | | |
+| TC-205    | "enter current job" exception | user has invalid inputs when "enter current job" | | | |
+| TC-206    | "enter job offers" exception | user has invalid inputs when "enter job offers" | | | |
+| TC-207    | Compare job offer with current job exception | user doesn't have a current job and has only one job offer and hit compare | | | |
+| TC-208    | Rank job exception | user has no current job and no job offers | | | |
 
 ### 2.3 System Testing
 | Test Case | Purpose | Steps | Expected Result | Actual Result | Pass/Fail | Additional Info |
@@ -83,4 +86,3 @@ For system testing:
 | TC-301    | Validate user interface elements | 1. Navigate through all screens of the application 2. Verify the presence and functionality of UI elements (buttons, text fields, etc.) | All UI elements are present and functional without any visual or functional defects | | | |
 | TC-302    | Validate user workflow | 1. Perform typical user actions such as enter current job, enter job offers, adjust comparison settings, compare jobs 2. Verify the application responds correctly to each action | Application responds correctly to user actions and progresses through expected workflows without errors | | | |
 | TC-303    | Validate performance | 1. Simulate user interactions with the application 2. Monitor application response time and resource usage | Application maintains acceptable performance metrics (response time, resource utilization) under expected load conditions | | | |
-| TC-304    | Edge Cases | | | | |
