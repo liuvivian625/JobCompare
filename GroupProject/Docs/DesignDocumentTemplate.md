@@ -36,11 +36,25 @@ The system will be built using Java 17, Android 13 SDK 33. The hardware for this
 
 ![class diagram](./images/Component_diagram.png)
 
+User Interface: This component is responsible for managing the graphical user interface of the application, where users can interact with the software.
+
+Job Management: This component handles the logic related to job data management within the application, such as editing/updating current job details and editing/updating job offers records.
+
+Comparison Logic: This component is dedicated to the logic that compares different job offerings based on certain criteria, which could include salary, benefits, location, etc.
+
+Data Model: This component manages the structure of the data within the application, defining how job data is represented.
+
+Android SQLite Database: This is the database component where the application's data is stored and retrieved from.
+
 ### 2.2 Deployment Diagram
 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
 
 ![class diagram](./images/Deployment_diagram.png)
+
+The deployment diagram provides a visual representation of how the software components will be installed and executed on actual hardware, specifically an Android mobile device. The diagram shows the Android application package (APK), named jobOffer.apk, as the primary artifact resulting from the build process, which includes both compiled bytecode in the classes.dex file and binary-formatted resources in resources.res. Additionally, it outlines the presence of uncompiled resources, for dynamic resource loading or updates post-deployment. The APK is deployed onto an Android operating system, which serves as the execution environment for the application.
+
+The mobile device, illustrated as the hardware component, uses an Android SQLite Database for persistent data storage, indicating the application's capability to store and retrieve data locally on the device. Furthermore, the deployment diagram incorporates the component diagram within the mobile device, signifying that the deployed application adheres to the architecture specified by the component diagram. The inclusion of AndroidManifest.xml within the APK specifies deployment configurations like permissions, API levels, and application components.
 
 ## 3 Low-Level Design
 
