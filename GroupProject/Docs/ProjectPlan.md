@@ -8,7 +8,7 @@
 
 *Here you introduce the product. Keep this  clean and simple, one or two sentences at most.*
 
-Job Offer Comparison is an android application that allows users to compare various details of job offers to help them choose the best offer for themselves.
+JobCompare is an android application that allows users to compare various details of job offers to help them choose the best offer for themselves.
 
 ## 2 Process Description
 
@@ -21,12 +21,26 @@ Job Offer Comparison is an android application that allows users to compare vari
 
 
 ### Inception
-- A fellow student wanted an application that allowed them to compare job offers to determine the best offer for themselves.
-
+- Understand project requirements: Based on the instructions, understand app features. 
+- Evaluate project scopes: Based on the instructions, evaluate what is in the scope and what is not. For example, the app is required to run locally and no web service is involved. "Delete job" is not a required feature.
+- Sketch inital UML class diagrams: Every team member sketches their own UML diagram for team discussion. After reviewing each member's diagram, the team produces a combined diagram.
 
 ### Elaboration
+- Create initial use case model: Based on the team's class diagram and instructions, create an initial use case model diagram to address the most critical use cases.
+- Draft inital testing plan: Based on the team's class diagram and instructions, draft an initial testing plan to test the app's functionality.
+- Draft inital version of design document: Based on previous work, draft an initial version of the design document to describe design considerations, architectural design, low-level design, and user interface design.
+
 ### Construction
+- Finalize use case model
+- Finalize testing plan: Fill in test case details
+- Finalize design document
+- Build an initial version of the app
+- Test the app
+
 ### Transition
+- Release the app
+- Collect bug reports and feature requests 
+- Release a new version if needed
 
 ## 3 Team
 
