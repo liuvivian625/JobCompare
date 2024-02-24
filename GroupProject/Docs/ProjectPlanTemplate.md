@@ -46,5 +46,5 @@ Job Offer Comparison is an android application that allows users to compare vari
 
 - Timesh Patel: Environment/system setup. Database setup.
 - Jing Liu: Backend, GUI
-- Haochen Zhang: Testing
+- Haochen Zhang: Testing, Frontend
 - Vineet Baburaj: Frontend, Backend
