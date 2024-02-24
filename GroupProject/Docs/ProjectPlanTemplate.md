@@ -2,11 +2,13 @@
 
 *This is the template for your project plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<person or team name\>
+**Author**: Team 191
 
 ## 1 Introduction
 
 *Here you introduce the product. Keep this  clean and simple, one or two sentences at most.*
+
+Job Offer Comparison is an android application that allows users to compare various details of job offers to help them choose the best offer for themselves.
 
 ## 2 Process Description
 
@@ -16,6 +18,15 @@
 - *Activity description (concise paragraph)*
 - *Entrance criteria (inputs needed for the activity)*
 - *Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)*
+
+
+### Inception
+- A fellow student wanted an application that allowed them to compare job offers to determine the best offer for themselves.
+
+
+### Elaboration
+### Construction
+### Transition
 
 ## 3 Team
 
