@@ -24,8 +24,8 @@ For integration testing:
 - Black-box testing will focus on testing the interaction between different components of the app to see if they can work together to achieve desired functionality.
 
 For System testing:
-- Black-box testing will focus on testing the functionality of the app as a whole.
-- This will include testing various user scenarios, edge cases, and performance aspects of the application.
+- Manual testing will focus on testing user interface. 
+- Black-box testing will focus on testing the workflow of the app as a whole.
 
 ### 1.3 Adequacy Criterion
 
