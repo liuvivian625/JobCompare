@@ -33,5 +33,18 @@ Job Offer Comparison is an android application that allows users to compare vari
 *Describe the team and their roles (include at least 4 roles, there may be more roles than there are team members)*
 
 - *Team members' names*
+
 - *Roles, with a short description of each role*
+- Backend: Create backend code that involves comparison methods, actions when buttons are clicked
+- Frontend: Create GUI and buttons.
+- Database: Create DB table, schema, and queries.
+- Testing: Create JUnit tests.
+
 - *Table showing which team member(s) has which role(s)*
+
+*Everyone will end up doing a little bit of everything*
+
+- Timesh Patel: Environment/system setup. Database setup.
+- Jing Liu: Backend, GUI
+- Haochen Zhang: Testing
+- Vineet Baburaj: Frontend, Backend
