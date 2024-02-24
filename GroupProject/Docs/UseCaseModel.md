@@ -1,6 +1,6 @@
 # Use Case Model
 
-**Author**: \<person or team name\>
+**Author**: Haochen Zhang
 
 ## 1 Use Case Diagram
 
