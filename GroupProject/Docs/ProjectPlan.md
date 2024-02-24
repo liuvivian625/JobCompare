@@ -21,14 +21,14 @@ JobCompare is an android application that allows users to compare various detail
 
 
 ### Inception
-- Understand project requirements: Based on the instructions, understand app features. 
-- Evaluate project scopes: Based on the instructions, evaluate what is in the scope and what is not. For example, the app is required to run locally and no web service is involved. "Delete job" is not a required feature.
-- Sketch inital UML class diagrams: Every team member sketches their own UML diagram for team discussion. After reviewing each member's diagram, the team produces a combined diagram.
+- The activity description for the inception phase would be to understand the project requirements. This means read the instructions and understand all the features of the application. This phase also includes evaluating project scopes where we understand what features/activities are in the project scope such as being able to add job offers. One item that is not in scope is deleting jobs. In this phase we will also create initial documents such as Class, UML, User Interface Diagram, Deployment and Component diagrams. After creating documents, the team will get together and review documents, discuss and make changes if needed. Finally this activity includes also making a project plan where we discussed what we expect to do for each phase and how the work can be accomplished by assigning work/roles.
+- The entrance criteria for this activity is the initial project requirements.
+- The exit criteria is creating initial documents, understanding app features, and understanding the scope of the app.
 
 ### Elaboration
-- Create initial use case model: Based on the team's class diagram and instructions, create an initial use case model diagram to address the most critical use cases.
-- Draft inital testing plan: Based on the team's class diagram and instructions, draft an initial testing plan to test the app's functionality.
-- Draft inital version of design document: Based on previous work, draft an initial version of the design document to describe design considerations, architectural design, low-level design, and user interface design.
+- The elaboration phase consists of elaborating on the use case model diagram to address the most critical use cases. It also includes  elaborating a testing plan to test app functionality. Finally it includes elaborating on a design document to describe design considerations, architectural design, low-level design, and user interface design.
+- The entrance criteria for this activity is having initial documents ready.
+- The exit criteria for this activity is to elaborate on all the documents and make sure the vision and architecture are stable. The documents and plan need to be detailed. We also need to make sure that all stakeholders and team members are in agreement
 
 ### Construction
 - Finalize use case model
@@ -39,7 +39,7 @@ JobCompare is an android application that allows users to compare various detail
 
 ### Transition
 - Release the app
-- Collect bug reports and feature requests 
+- Collect bug reports and feature requests
 - Release a new version if needed
 
 ## 3 Team
@@ -49,7 +49,7 @@ JobCompare is an android application that allows users to compare various detail
 - *Team members' names*
 
 - *Roles, with a short description of each role*
-- Backend: Create backend code that involves comparison methods, actions when buttons are clicked
+- Backend: Create backend code that involves comparison methods, actions when buttons are clicked. Create APIs.
 - Frontend: Create GUI and buttons.
 - Database: Create DB table, schema, and queries.
 - Testing: Create JUnit tests.
@@ -58,7 +58,7 @@ JobCompare is an android application that allows users to compare various detail
 
 *Everyone will end up doing a little bit of everything*
 
-- Timesh Patel: Environment/system setup. Database setup.
-- Jing Liu: Backend, GUI
-- Haochen Zhang: Testing, Frontend
-- Vineet Baburaj: Frontend, Backend
+- Timesh Patel: Environment/system (include database) setup. Frontend/Backend.
+- Jing Liu: Backend, GUI.
+- Haochen Zhang: Testing, Frontend.
+- Vineet Baburaj: Frontend, Backend.
