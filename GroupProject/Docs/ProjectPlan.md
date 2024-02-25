@@ -31,16 +31,14 @@ JobCompare is an android application that allows users to compare various detail
 - The exit criteria for this activity is to elaborate on all the documents and make sure the vision and architecture are stable. The documents and plan need to be detailed. We also need to make sure that all stakeholders and team members are in agreement
 
 ### Construction
-- Finalize use case model
-- Finalize testing plan: Fill in test case details
-- Finalize design document
-- Build an initial version of the app
-- Test the app
+- The construction phase consists of a complete set of design, code and test cases. We achieve this during this phase by developing and thoroughly testing all features. It also includes finalizes documents for testing, design and user guides.
+- The entrance criteria is having initial documents and a plan ready, thereby the team need to finalize the documents and begin coding in the next phase.
+- The exit criteria is to finalize documents, complete tests, make sure the product is integrated on the necessary systems. It includes making sure all use cases are achieved.
 
 ### Transition
-- Release the app
-- Collect bug reports and feature requests
-- Release a new version if needed
+- The transition phase consists of releasing the application, collecting bug reports and feature requests. If also includes releasing a new version if it is needed.
+- The entrance criteria is a finished application with all the necessary documents.
+- The exit criteria is the project/application is complete and is in use.
 
 ## 3 Team
 
@@ -59,6 +57,6 @@ JobCompare is an android application that allows users to compare various detail
 *Everyone will end up doing a little bit of everything*
 
 - Timesh Patel: Environment/system (include database) setup. Frontend/Backend.
-- Jing Liu: Backend, GUI.
+- Jing Liu: Backend, Frontend.
 - Haochen Zhang: Testing, Frontend.
 - Vineet Baburaj: Frontend, Backend.
