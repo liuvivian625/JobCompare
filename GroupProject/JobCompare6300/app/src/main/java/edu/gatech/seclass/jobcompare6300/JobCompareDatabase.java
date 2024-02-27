@@ -66,4 +66,24 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
+
+    public void addJob()
+    {
+
+    }
+
+    public void updateJob()
+    {
+
+    }
+
+    public void fetchCurrentJob()
+    {
+
+    }
+
+    public void fetchAllJobs()
+    {
+        
+    }
 }
