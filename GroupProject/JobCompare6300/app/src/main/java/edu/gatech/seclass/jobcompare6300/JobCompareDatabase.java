@@ -1,10 +1,17 @@
 package edu.gatech.seclass.jobcompare6300;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.List;
+import java.util.logging.Level;
+
+import java.util.logging.Logger;
 
 public class JobCompareDatabase extends SQLiteOpenHelper
 {
@@ -14,7 +21,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final int DATABASE_VERSION = 1;
 
     //table name
-    public static final String TABLE_NAME = "job_details";
+    public static final String TABLE_NAME = "JOB_DETAILS";
 
     // Attributes of the table job_details.
     public static final String COLUMN_JOB_ID = "job_id";
@@ -32,6 +39,11 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String COLUMN_IS_CURRENT_JOB = "is_current_job";
     public static final String COLUMN_SCORE = "score";
 
+    //Queries for getting data
+    public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE IS_CURRENT_JOB = 1;";
+    public static final String QUERY_FETCH_ALL_JOBS = "SELECT * FROM " + TABLE_NAME;
+
+    Logger logger = Logger.getLogger(JobCompareDatabase.class.getName());
 
     public JobCompareDatabase(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -67,8 +79,37 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         onCreate(sqLiteDatabase);
     }
 
-    public void addJob()
+    public void addJob(Job job)
     {
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_JOB_TITLE, job.getJobTitle());
+        cv.put(COLUMN_COMPANY, job.getCompany());
+        cv.put(COLUMN_CITY, job.getLocation().getCity());
+        cv.put(COLUMN_STATE, job.getLocation().getState());
+        cv.put(COLUMN_COST_OF_LIVING, job.getCostOfLiving());
+        cv.put(COLUMN_YEARLY_SALARY, job.getYearlySalary());
+        cv.put(COLUMN_ADJUSTED_YEARLY_SALARY, job.getAdjustedYearlySalary());
+        cv.put(COLUMN_YEARLY_BONUS, job.getYearlyBonus());
+        cv.put(COLUMN_ADJUSTED_YEARLY_BONUS, job.getAdjustedYearlyBonus());
+        cv.put(COLUMN_HOME_BUYING_FUND_PERCENTAGE, job.getHomeBuyingFundPercentage());
+        cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, job.getMonthlyInternetStipend());
+        cv.put(COLUMN_IS_CURRENT_JOB, job.getCurrentJob());
+        cv.put(COLUMN_SCORE, job.getScore());
+
+        long result = db.insert(TABLE_NAME, null, cv);
+
+        if (result == -1)
+        {
+            logger.log(Level.INFO, "ERROR: Could not insert into db.");
+        }
+        else
+        {
+            logger.log(Level.INFO, "Added Successfully");
+        }
 
     }
 
@@ -77,13 +118,89 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
     }
 
-    public void fetchCurrentJob()
+    public Job fetchCurrentJob()
     {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        Job job = null;
 
+        if (db != null)
+        {
+            cursor = db.rawQuery(QUERY_FETCH_CURRENT_JOB, null);
+        }
+
+        if (cursor != null)
+        {
+            if (cursor.getCount() == 0)
+            {
+                logger.log(Level.INFO, "ERROR: NO DATA");
+            }
+            else
+            {
+                while (cursor.moveToNext())
+                {
+                    job.setJobTitle(cursor.getString(1));
+                    job.setCompany(cursor.getString(2));
+                    job.setLocation(new Location(cursor.getString(3), cursor.getString(4)));
+                    job.setCostOfLiving(cursor.getFloat(5));
+                    job.setYearlySalary(cursor.getFloat(6));
+                    job.setAdjustedYearlySalary(cursor.getFloat(7));
+                    job.setYearlyBonus(cursor.getFloat(8));
+                    job.setAdjustedYearlyBonus(cursor.getFloat(9));
+                    job.setHomeBuyingFundPercentage(cursor.getFloat(10));
+                    job.setMonthlyInternetStipend(cursor.getFloat(11));
+                    job.setCurrentJob(cursor.getFloat(12));
+                    job.setScore(cursor.getFloat(13));
+                }
+            }
+            cursor.close();
+        }
+
+        return job;
     }
 
-    public void fetchAllJobs()
+    public List<Job> fetchAllJobs()
     {
-        
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        List<Job> allJobs = null;
+
+        if (db != null)
+        {
+            cursor = db.rawQuery(QUERY_FETCH_CURRENT_JOB, null);
+        }
+
+        if (cursor != null)
+        {
+            if (cursor.getCount() == 0)
+            {
+                logger.log(Level.INFO, "ERROR: NO DATA");
+            }
+            else
+            {
+                while (cursor.moveToNext())
+                {
+                    Job job = null;
+
+                    job.setJobTitle(cursor.getString(1));
+                    job.setCompany(cursor.getString(2));
+                    job.setLocation(new Location(cursor.getString(3), cursor.getString(4)));
+                    job.setCostOfLiving(cursor.getFloat(5));
+                    job.setYearlySalary(cursor.getFloat(6));
+                    job.setAdjustedYearlySalary(cursor.getFloat(7));
+                    job.setYearlyBonus(cursor.getFloat(8));
+                    job.setAdjustedYearlyBonus(cursor.getFloat(9));
+                    job.setHomeBuyingFundPercentage(cursor.getFloat(10));
+                    job.setMonthlyInternetStipend(cursor.getFloat(11));
+                    job.setCurrentJob(cursor.getFloat(12));
+                    job.setScore(cursor.getFloat(13));
+
+                    allJobs.add(job);
+                }
+            }
+            cursor.close();
+        }
+
+        return allJobs;
     }
 }
