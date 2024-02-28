@@ -30,12 +30,12 @@ public class Job {
 
     private Float monthlyInternetStipend;
 
-    private Boolean isCurrentJob;
+    private Float isCurrentJob;
 
     private Float score;
 
     public Job (Integer jobID, String jobTitle, String company, Location location, Float costOfLiving, Float yearlySalary, Float adjustedYearlySalary,Float yearlyBonus,
-                Float adjustedYearlyBonus, Float numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Boolean isCurrentJob, Float score)
+                Float adjustedYearlyBonus, Float numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Float isCurrentJob, Float score)
     {
         this.jobID = jobID;
         this.jobTitle = jobTitle;
@@ -158,11 +158,11 @@ public class Job {
         this.monthlyInternetStipend = monthlyInternetStipend;
     }
 
-    public Boolean getCurrentJob() {
+    public Float getCurrentJob() {
         return isCurrentJob;
     }
 
-    public void setCurrentJob(Boolean currentJob) {
+    public void setCurrentJob(Float currentJob) {
         isCurrentJob = currentJob;
     }
 
