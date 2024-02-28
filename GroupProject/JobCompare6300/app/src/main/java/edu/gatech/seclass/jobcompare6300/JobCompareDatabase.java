@@ -42,6 +42,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     //Queries for getting data
     public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE IS_CURRENT_JOB = 1;";
     public static final String QUERY_FETCH_ALL_JOBS = "SELECT * FROM " + TABLE_NAME;
+    //public static final String QUERY_UPDATE_JOB = "UPDATE " + TABLE_NAME + "SET "
 
     Logger logger = Logger.getLogger(JobCompareDatabase.class.getName());
 
@@ -55,20 +56,20 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     {
         String createDB =
                 "CREATE TABLE " + TABLE_NAME +
-                        " (" + COLUMN_JOB_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        COLUMN_JOB_TITLE + "TEXT, " +
-                        COLUMN_COMPANY + "TEXT, " +
-                        COLUMN_CITY + "TEXT, " +
-                        COLUMN_STATE + "TEXT, " +
-                        COLUMN_COST_OF_LIVING + "REAL, " +
-                        COLUMN_YEARLY_SALARY + "REAL, " +
-                        COLUMN_ADJUSTED_YEARLY_SALARY + "REAL, " +
-                        COLUMN_YEARLY_BONUS + "REAL, " +
-                        COLUMN_ADJUSTED_YEARLY_BONUS + "REAL, " +
-                        COLUMN_HOME_BUYING_FUND_PERCENTAGE + "REAL, " +
-                        COLUMN_MONTHLY_INTERNET_STIPEND + "REAL, " +
-                        COLUMN_IS_CURRENT_JOB + "INTEGER, " +
-                        COLUMN_SCORE + "REAL);";
+                        " (" + COLUMN_JOB_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_JOB_TITLE + " TEXT, " +
+                        COLUMN_COMPANY + " TEXT, " +
+                        COLUMN_CITY + " TEXT, " +
+                        COLUMN_STATE + " TEXT, " +
+                        COLUMN_COST_OF_LIVING + " REAL, " +
+                        COLUMN_YEARLY_SALARY + " REAL, " +
+                        COLUMN_ADJUSTED_YEARLY_SALARY + " REAL, " +
+                        COLUMN_YEARLY_BONUS + " REAL, " +
+                        COLUMN_ADJUSTED_YEARLY_BONUS + " REAL, " +
+                        COLUMN_HOME_BUYING_FUND_PERCENTAGE + " REAL, " +
+                        COLUMN_MONTHLY_INTERNET_STIPEND + " REAL, " +
+                        COLUMN_IS_CURRENT_JOB + " INTEGER, " +
+                        COLUMN_SCORE + " REAL);";
 
         sqLiteDatabase.execSQL(createDB);
     }
