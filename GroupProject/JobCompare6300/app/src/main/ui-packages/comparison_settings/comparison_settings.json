@@ -1,0 +1,1594 @@
+{
+  "name": "comparison_settings",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "FGsEruzlT7ADriLcoJ2Ryv",
+    "node": "12:835",
+    "version": "5239651870",
+    "component-id": "5af7f3f707604333d114da4e0286d55d87cebfb4"
+  },
+  "default": "ComparisonSettings",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Frame 1"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 1"
+      },
+      {
+        "type": "text",
+        "id": "Comparison Settings"
+      },
+      {
+        "type": "text",
+        "id": "label-text"
+      },
+      {
+        "type": "group",
+        "id": "Frame 3"
+      },
+      {
+        "type": "group",
+        "id": "Group 2"
+      },
+      {
+        "type": "group",
+        "id": "Weight"
+      },
+      {
+        "type": "group",
+        "id": "Weight1"
+      },
+      {
+        "type": "group",
+        "id": "Weight2"
+      },
+      {
+        "type": "group",
+        "id": "Weight3"
+      },
+      {
+        "type": "group",
+        "id": "Weight4"
+      },
+      {
+        "type": "group",
+        "id": "Weight5"
+      },
+      {
+        "type": "group",
+        "id": "1. Extra Small (0-599dp)"
+      },
+      {
+        "type": "text",
+        "id": "label-text1"
+      },
+      {
+        "type": "text",
+        "id": "label-text2"
+      },
+      {
+        "type": "text",
+        "id": "label-text3"
+      },
+      {
+        "type": "text",
+        "id": "label-text4"
+      },
+      {
+        "type": "text",
+        "id": "label-text5"
+      },
+      {
+        "type": "text",
+        "id": "label-text6"
+      },
+      {
+        "type": "group",
+        "id": "MainMenu"
+      },
+      {
+        "type": "group",
+        "id": "Reset"
+      },
+      {
+        "type": "group",
+        "id": "state-layer"
+      },
+      {
+        "type": "text",
+        "id": "label-text7"
+      },
+      {
+        "type": "group",
+        "id": "state-layer1"
+      },
+      {
+        "type": "text",
+        "id": "label-text8"
+      },
+      {
+        "type": "group",
+        "id": "state-layer2"
+      },
+      {
+        "type": "group",
+        "id": "icon-minus"
+      },
+      {
+        "type": "text",
+        "id": "label-text9"
+      },
+      {
+        "type": "group",
+        "id": "icon-plus"
+      },
+      {
+        "type": "vector",
+        "id": "icon"
+      },
+      {
+        "type": "vector",
+        "id": "icon1"
+      },
+      {
+        "type": "group",
+        "id": "state-layer3"
+      },
+      {
+        "type": "group",
+        "id": "icon-minus1"
+      },
+      {
+        "type": "text",
+        "id": "label-text10"
+      },
+      {
+        "type": "group",
+        "id": "icon-plus1"
+      },
+      {
+        "type": "vector",
+        "id": "icon2"
+      },
+      {
+        "type": "vector",
+        "id": "icon3"
+      },
+      {
+        "type": "group",
+        "id": "state-layer4"
+      },
+      {
+        "type": "group",
+        "id": "icon-minus2"
+      },
+      {
+        "type": "text",
+        "id": "label-text11"
+      },
+      {
+        "type": "group",
+        "id": "icon-plus2"
+      },
+      {
+        "type": "vector",
+        "id": "icon4"
+      },
+      {
+        "type": "vector",
+        "id": "icon5"
+      },
+      {
+        "type": "group",
+        "id": "state-layer5"
+      },
+      {
+        "type": "group",
+        "id": "icon-minus3"
+      },
+      {
+        "type": "text",
+        "id": "label-text12"
+      },
+      {
+        "type": "group",
+        "id": "icon-plus3"
+      },
+      {
+        "type": "vector",
+        "id": "icon6"
+      },
+      {
+        "type": "vector",
+        "id": "icon7"
+      },
+      {
+        "type": "group",
+        "id": "state-layer6"
+      },
+      {
+        "type": "group",
+        "id": "icon-minus4"
+      },
+      {
+        "type": "text",
+        "id": "label-text13"
+      },
+      {
+        "type": "group",
+        "id": "icon-plus4"
+      },
+      {
+        "type": "vector",
+        "id": "icon8"
+      },
+      {
+        "type": "vector",
+        "id": "icon9"
+      },
+      {
+        "type": "group",
+        "id": "state-layer7"
+      },
+      {
+        "type": "group",
+        "id": "icon-minus5"
+      },
+      {
+        "type": "text",
+        "id": "label-text14"
+      },
+      {
+        "type": "group",
+        "id": "icon-plus5"
+      },
+      {
+        "type": "vector",
+        "id": "icon10"
+      },
+      {
+        "type": "vector",
+        "id": "icon11"
+      }
+    ],
+    "modes": {
+      "ComparisonSettings": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "Frame 1",
+              "Rectangle 1",
+              "Comparison Settings",
+              "label-text",
+              "Frame 3",
+              "Group 2",
+              "Weight",
+              "Weight1",
+              "Weight2",
+              "Weight3",
+              "Weight4",
+              "Weight5"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 287.9999999999997,
+              "saturation": 0.020491803278688568,
+              "value": 0.9568627450980393
+            }
+          },
+          {
+            "id": "Frame 1",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -10.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -9.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "1. Extra Small (0-599dp)"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 360.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 56.0
+              }
+            },
+            "vector-content": "rectangle_1.svg"
+          },
+          {
+            "id": "Comparison Settings",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -372.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 360.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 56.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Comparison Settings",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align-vertical": "center",
+            "text-size": 22.0,
+            "letter-spacing": 0.5,
+            "line-height": 1.0909091186523439
+          },
+          {
+            "id": "label-text",
+            "margin": {
+              "left": 267.0,
+              "top": 65.0,
+              "right": 47.0,
+              "bottom": 711.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "Weight",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "Frame 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 16.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 100.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "label-text1",
+              "label-text2",
+              "label-text3",
+              "label-text4",
+              "label-text5",
+              "label-text6"
+            ],
+            "item-spacing": 32.0,
+            "clip-content": false
+          },
+          {
+            "id": "Group 2",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 68.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 584.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 224.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "MainMenu",
+              "Reset"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Weight",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 244.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 92.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-alignment": "center",
+            "is-structured": false,
+            "children": [
+              "state-layer2"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 262.94117647058823,
+              "saturation": 0.1333333333333333,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "Weight1",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 244.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 148.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-alignment": "center",
+            "is-structured": false,
+            "children": [
+              "state-layer3"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 262.94117647058823,
+              "saturation": 0.1333333333333333,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "Weight2",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 244.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 204.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-alignment": "center",
+            "is-structured": false,
+            "children": [
+              "state-layer4"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 262.94117647058823,
+              "saturation": 0.1333333333333333,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "Weight3",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 244.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 260.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-alignment": "center",
+            "is-structured": false,
+            "children": [
+              "state-layer5"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 262.94117647058823,
+              "saturation": 0.1333333333333333,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "Weight4",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 244.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 316.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-alignment": "center",
+            "is-structured": false,
+            "children": [
+              "state-layer6"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 262.94117647058823,
+              "saturation": 0.1333333333333333,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "Weight5",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 244.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 372.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-alignment": "center",
+            "is-structured": false,
+            "children": [
+              "state-layer7"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 262.94117647058823,
+              "saturation": 0.1333333333333333,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "1. Extra Small (0-599dp)",
+            "presence": false,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 360.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 799.0
+              }
+            },
+            "is-structured": false,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "label-text1",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "Yearly Salary",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "label-text2",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "Yearly Bonus",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "label-text3",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "Number of Stock Option Shares",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "label-text4",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "Home Buying Program Fund",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "label-text5",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "Personal Choice Holidays",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "label-text6",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "Monthly Internet Stipend",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "MainMenu",
+            "border-radius": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-alignment": "center",
+            "children": [
+              "state-layer"
+            ],
+            "item-spacing": 16.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 256.42857142857144,
+              "saturation": 0.5121951219512195,
+              "value": 0.6431372549019608
+            }
+          },
+          {
+            "id": "Reset",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 124.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "stroke-width": 1.0,
+            "stroke-color": {
+              "alpha": 1.0,
+              "hue": 269.99999999999994,
+              "saturation": 0.07936507936507942,
+              "value": 0.49411764705882355
+            },
+            "children": [
+              "state-layer1"
+            ],
+            "item-spacing": 8.0
+          },
+          {
+            "id": "state-layer",
+            "padding": {
+              "left": 24.0,
+              "top": 10.0,
+              "right": 24.0,
+              "bottom": 10.0
+            },
+            "arrangement": "row",
+            "children": [
+              "label-text7"
+            ],
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "label-text7",
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Main Menu",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.10000000149011612,
+            "line-height": 1.4285714721679688
+          },
+          {
+            "id": "state-layer1",
+            "padding": {
+              "left": 24.0,
+              "top": 10.0,
+              "right": 24.0,
+              "bottom": 10.0
+            },
+            "arrangement": "row",
+            "children": [
+              "label-text8"
+            ],
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "label-text8",
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 256.42857142857144,
+              "saturation": 0.5121951219512195,
+              "value": 0.6431372549019608
+            },
+            "text-content": "Reset",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.10000000149011612,
+            "line-height": 1.4285714721679688
+          },
+          {
+            "id": "state-layer2",
+            "padding": {
+              "left": 16.0,
+              "top": 10.0,
+              "right": 16.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "icon-minus",
+              "label-text9",
+              "icon-plus"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "icon-minus",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "label-text9",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "8",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "icon-plus",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "icon",
+            "margin": {
+              "left": 3.0,
+              "top": 8.25,
+              "right": 3.0,
+              "bottom": 8.25
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon.svg"
+          },
+          {
+            "id": "icon1",
+            "margin": 3.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon1.svg"
+          },
+          {
+            "id": "state-layer3",
+            "padding": {
+              "left": 16.0,
+              "top": 10.0,
+              "right": 16.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "icon-minus1",
+              "label-text10",
+              "icon-plus1"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "icon-minus1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon2"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "label-text10",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "8",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "icon-plus1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon3"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "icon2",
+            "margin": {
+              "left": 3.0,
+              "top": 8.25,
+              "right": 3.0,
+              "bottom": 8.25
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon2.svg"
+          },
+          {
+            "id": "icon3",
+            "margin": 3.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon3.svg"
+          },
+          {
+            "id": "state-layer4",
+            "padding": {
+              "left": 16.0,
+              "top": 10.0,
+              "right": 16.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "icon-minus2",
+              "label-text11",
+              "icon-plus2"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "icon-minus2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon4"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "label-text11",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "8",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "icon-plus2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon5"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "icon4",
+            "margin": {
+              "left": 3.0,
+              "top": 8.25,
+              "right": 3.0,
+              "bottom": 8.25
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon4.svg"
+          },
+          {
+            "id": "icon5",
+            "margin": 3.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon5.svg"
+          },
+          {
+            "id": "state-layer5",
+            "padding": {
+              "left": 16.0,
+              "top": 10.0,
+              "right": 16.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "icon-minus3",
+              "label-text12",
+              "icon-plus3"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "icon-minus3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon6"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "label-text12",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "8",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "icon-plus3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon7"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "icon6",
+            "margin": {
+              "left": 3.0,
+              "top": 8.25,
+              "right": 3.0,
+              "bottom": 8.25
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon6.svg"
+          },
+          {
+            "id": "icon7",
+            "margin": 3.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon7.svg"
+          },
+          {
+            "id": "state-layer6",
+            "padding": {
+              "left": 16.0,
+              "top": 10.0,
+              "right": 16.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "icon-minus4",
+              "label-text13",
+              "icon-plus4"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "icon-minus4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon8"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "label-text13",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "8",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "icon-plus4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon9"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "icon8",
+            "margin": {
+              "left": 3.0,
+              "top": 8.25,
+              "right": 3.0,
+              "bottom": 8.25
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon8.svg"
+          },
+          {
+            "id": "icon9",
+            "margin": 3.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon9.svg"
+          },
+          {
+            "id": "state-layer7",
+            "padding": {
+              "left": 16.0,
+              "top": 10.0,
+              "right": 16.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "icon-minus5",
+              "label-text14",
+              "icon-plus5"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "icon-minus5",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon10"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "label-text14",
+            "color": {
+              "alpha": 1.0,
+              "hue": 264.0,
+              "saturation": 0.15625,
+              "value": 0.12549019607843137
+            },
+            "text-content": "8",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "letter-spacing": 0.5,
+            "line-height": 1.7142857360839843
+          },
+          {
+            "id": "icon-plus5",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "icon11"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "icon10",
+            "margin": {
+              "left": 3.0,
+              "top": 8.25,
+              "right": 3.0,
+              "bottom": 8.25
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon10.svg"
+          },
+          {
+            "id": "icon11",
+            "margin": 3.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon11.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "ComparisonSettings",
+      "size": {
+        "width": 360.0,
+        "height": 800.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
