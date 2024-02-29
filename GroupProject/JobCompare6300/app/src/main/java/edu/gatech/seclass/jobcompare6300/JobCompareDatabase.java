@@ -24,25 +24,53 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String TABLE_NAME = "JOB_DETAILS";
 
     // Attributes of the table job_details.
-    public static final String COLUMN_JOB_ID = "job_id";
-    public static final String COLUMN_JOB_TITLE = "job_title";
-    public static final String COLUMN_COMPANY = "company";
-    public static final String COLUMN_CITY = "city";
-    public static final String COLUMN_STATE = "state";
-    public static final String COLUMN_COST_OF_LIVING = "cost_of_living";
-    public static final String COLUMN_YEARLY_SALARY = "yearly_salary";
-    public static final String COLUMN_ADJUSTED_YEARLY_SALARY = "adjusted_yearly_salary";
-    public static final String COLUMN_YEARLY_BONUS = "yearly_bonus";
-    public static final String COLUMN_ADJUSTED_YEARLY_BONUS = "adjusted_yearly_bonus";
-    public static final String COLUMN_HOME_BUYING_FUND_PERCENTAGE = "home_buying_fund_percentage";
-    public static final String COLUMN_MONTHLY_INTERNET_STIPEND = "monthly_internet_stipend";
-    public static final String COLUMN_IS_CURRENT_JOB = "is_current_job";
-    public static final String COLUMN_SCORE = "score";
+    public static final String COLUMN_JOB_ID = "JOB_ID";
+    public static final String COLUMN_JOB_TITLE = "JOB_TITLE";
+    public static final String COLUMN_COMPANY = "COMPANY";
+    public static final String COLUMN_CITY = "CITY";
+    public static final String COLUMN_STATE = "STATE";
+    public static final String COLUMN_COST_OF_LIVING = "COST_OF_LIVING";
+    public static final String COLUMN_YEARLY_SALARY = "YEARLY_SALARY";
+    public static final String COLUMN_ADJUSTED_YEARLY_SALARY = "ADJUSTED_YEARLY_SALARY";
+    public static final String COLUMN_YEARLY_BONUS = "YEARLY_BONUS";
+    public static final String COLUMN_ADJUSTED_YEARLY_BONUS = "ADJUSTED_YEARLY_BONUS";
+    public static final String COLUMN_HOME_BUYING_FUND_PERCENTAGE = "HOME_BUYING_FUND_PERCENTAGE";
+    public static final String COLUMN_MONTHLY_INTERNET_STIPEND = "MONTHLY_INTERNET_STIPEND";
+    public static final String COLUMN_IS_CURRENT_JOB = "IS_CURRENT_JOB";
+    public static final String COLUMN_SCORE = "SCORE";
 
     //Queries for getting data
-    public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE IS_CURRENT_JOB = 1;";
+    public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE IS_CURRENT_JOB = 1";
     public static final String QUERY_FETCH_ALL_JOBS = "SELECT * FROM " + TABLE_NAME;
-    //public static final String QUERY_UPDATE_JOB = "UPDATE " + TABLE_NAME + "SET "
+    public static final String QUERY_UPDATE_CURRENT_JOB = "UPDATE " + TABLE_NAME + " SET "
+            + COLUMN_JOB_TITLE + " =? "
+            + COLUMN_COMPANY + " =? "
+            + COLUMN_CITY + " =? "
+            + COLUMN_STATE + " =? "
+            + COLUMN_COST_OF_LIVING + " =? "
+            + COLUMN_YEARLY_SALARY + " =? "
+            + COLUMN_ADJUSTED_YEARLY_SALARY + " =? "
+            + COLUMN_YEARLY_BONUS + " =? "
+            + COLUMN_ADJUSTED_YEARLY_BONUS + " =? "
+            + COLUMN_HOME_BUYING_FUND_PERCENTAGE + " =? "
+            + COLUMN_MONTHLY_INTERNET_STIPEND + " =? "
+            + COLUMN_IS_CURRENT_JOB + " =? WHERE " + COLUMN_IS_CURRENT_JOB + " = 1;";
+
+    public static final String QUERY_CHECK_JOB_EXISTS = "SELECT * FROM " + TABLE_NAME + " WHERE "
+            + COLUMN_JOB_TITLE + " =? AND "
+            + COLUMN_COMPANY + " =? AND "
+            + COLUMN_CITY + " =? AND "
+            + COLUMN_STATE + " =? AND "
+            + COLUMN_COST_OF_LIVING + " =? AND "
+            + COLUMN_YEARLY_SALARY + " =? AND "
+            + COLUMN_ADJUSTED_YEARLY_SALARY + " =? AND "
+            + COLUMN_YEARLY_BONUS + " =? AND "
+            + COLUMN_ADJUSTED_YEARLY_BONUS + " =? AND "
+            + COLUMN_HOME_BUYING_FUND_PERCENTAGE + " =? AND "
+            + COLUMN_MONTHLY_INTERNET_STIPEND + " =? AND "
+            + COLUMN_IS_CURRENT_JOB + " =?";
+
+    public static final String QUERY_RESET_DB = "DELETE FROM " + TABLE_NAME;
 
     Logger logger = Logger.getLogger(JobCompareDatabase.class.getName());
 
@@ -82,8 +110,6 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
     public void addJob(Job job)
     {
-
-
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -114,16 +140,41 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
     }
 
-    public void updateJob()
+    public void updateJob(Job job)
     {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
 
+        cv.put(COLUMN_JOB_TITLE, job.getJobTitle());
+        cv.put(COLUMN_COMPANY, job.getCompany());
+        cv.put(COLUMN_CITY, job.getLocation().getCity());
+        cv.put(COLUMN_STATE, job.getLocation().getState());
+        cv.put(COLUMN_COST_OF_LIVING, job.getCostOfLiving());
+        cv.put(COLUMN_YEARLY_SALARY, job.getYearlySalary());
+        cv.put(COLUMN_ADJUSTED_YEARLY_SALARY, job.getAdjustedYearlySalary());
+        cv.put(COLUMN_YEARLY_BONUS, job.getYearlyBonus());
+        cv.put(COLUMN_ADJUSTED_YEARLY_BONUS, job.getAdjustedYearlyBonus());
+        cv.put(COLUMN_HOME_BUYING_FUND_PERCENTAGE, job.getHomeBuyingFundPercentage());
+        cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, job.getMonthlyInternetStipend());
+        cv.put(COLUMN_IS_CURRENT_JOB, job.getCurrentJob());
+
+        long result = db.update(TABLE_NAME, cv, COLUMN_IS_CURRENT_JOB + " = ?", new String[]{"1"});
+
+        if (result == -1)
+        {
+            logger.log(Level.INFO, "ERROR: Could not update current job.");
+        }
+        else
+        {
+            logger.log(Level.INFO, "Updated Current Job Successfully");
+        }
     }
 
     public Job fetchCurrentJob()
     {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
-        Job job = null;
+        Job job = new Job();
 
         if (db != null)
         {
@@ -168,7 +219,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
         if (db != null)
         {
-            cursor = db.rawQuery(QUERY_FETCH_CURRENT_JOB, null);
+            cursor = db.rawQuery(QUERY_FETCH_ALL_JOBS, null);
         }
 
         if (cursor != null)
@@ -181,7 +232,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
             {
                 while (cursor.moveToNext())
                 {
-                    Job job = null;
+                    Job job = new Job();
 
                     job.setJobTitle(cursor.getString(1));
                     job.setCompany(cursor.getString(2));
@@ -203,5 +254,35 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         }
 
         return allJobs;
+    }
+
+    public boolean checkJobExists(Job job)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        boolean jobExists = true;
+
+        //see if new job offer added is in database
+        //return false if it doesn't exist
+
+        String[] job_args = {job.getJobTitle(), job.getCompany(), job.getLocation().getCity(), job.getLocation().getState(), job.getCostOfLiving().toString(),
+        job.getYearlySalary().toString(), job.getAdjustedYearlySalary().toString(), job.getYearlyBonus().toString(), job.getAdjustedYearlyBonus().toString(),
+        job.getHomeBuyingFundPercentage().toString(), job.getMonthlyInternetStipend().toString()};
+
+        Cursor cursor = db.rawQuery(QUERY_CHECK_JOB_EXISTS, job_args);
+
+        if (cursor.getCount() <= 0)
+        {
+            cursor.close();
+            jobExists = false;
+        }
+
+        return jobExists;
+    }
+
+    public void resetDb()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(QUERY_RESET_DB);
     }
 }
