@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- button style doesn't work-->
+    <style name="PrimaryButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:buttonCornerRadius">12dp</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- button style doesn't work-->
+    <style name="SecondaryButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:buttonCornerRadius">12dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:strokeColor">@color/primary</item>
+        <item name="android:strokeWidth">2</item>
+    </style>
+
+    <style name="BannerStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextFieldNameUpper" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">4dp</item>
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TextFieldNameLeft" parent="Widget.AppCompat.TextView">
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TableHeader" parent="Widget.AppCompat.TextView">
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">14sp</item>
+        <itme name="android:textStyle">bold</itme>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TableHeaderWithBackground" parent="Widget.AppCompat.TextView">
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@color/tertiary</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">14sp</item>
+        <itme name="android:textStyle">bold</itme>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TableContent" parent="Widget.AppCompat.TextView">
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@color/tertiary</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TextFieldValue" parent="Widget.AppCompat.EditText">
+        <item name="layout_constraintRight_toRightOf">parent</item>
+        <item name="android:inputType">number</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:background">@color/background_dark</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+
+    </style>
+
+
+</resources>
