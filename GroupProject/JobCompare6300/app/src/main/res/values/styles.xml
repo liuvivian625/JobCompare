@@ -67,7 +67,7 @@
         <item name="android:background">@color/background</item>
         <item name="android:textColor">@color/primary</item>
         <item name="android:textSize">14sp</item>
-        <itme name="android:textStyle">bold</itme>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">textStart</item>
     </style>
 
@@ -80,7 +80,7 @@
         <item name="android:background">@color/tertiary</item>
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textSize">14sp</item>
-        <itme name="android:textStyle">bold</itme>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">textStart</item>
     </style>
 
