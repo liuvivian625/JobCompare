@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".CompareTwoJobsActivity">
+    tools:context=".ui.CompareTwoJobsActivity">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -321,7 +321,7 @@
             android:layout_margin="24dp">
 
             <Button
-                android:id="@+id/buttonMainMenu"
+                android:id="@+id/buttonNewComparisonCompareTwoJobs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Comparison"
@@ -333,7 +333,7 @@
                 />
 
             <Button
-                android:id="@+id/buttonReset"
+                android:id="@+id/buttonMainMenuCompareTwoJobs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Main Menu"

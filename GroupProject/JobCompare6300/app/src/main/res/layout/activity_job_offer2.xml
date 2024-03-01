@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".JobOffer2Activity">
+    tools:context=".ui.JobOffer2Activity">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -26,12 +26,11 @@
         android:layout_height="40dp" />
 
     <Button
-        android:id="@+id/buttonNewOffer"
+        android:id="@+id/buttonNewOfferJobOffer2"
         android:layout_width="242dp"
         android:layout_height="56dp"
         android:layout_gravity="center"
         android:backgroundTint="@color/primary"
-        android:onClick="handleClick"
         android:textSize="14sp"
         android:text="New Offer"
         />
@@ -41,12 +40,11 @@
         android:layout_height="16dp" />
 
     <Button
-        android:id="@+id/buttonMainMenu"
+        android:id="@+id/buttonMainMenuJobOffer2"
         android:layout_width="242dp"
         android:layout_height="56dp"
         android:layout_gravity="center"
         android:backgroundTint="@color/primary"
-        android:onClick="handleClick"
         android:textSize="14sp"
         android:text="Main Menu" />
 
@@ -54,12 +52,11 @@
         android:layout_width="match_parent"
         android:layout_height="16dp" />
     <Button
-        android:id="@+id/buttonCompare"
+        android:id="@+id/buttonCompareWithCurrentJobOffer2"
         android:layout_width="242dp"
         android:layout_height="56dp"
         android:layout_gravity="center"
         android:backgroundTint="@color/primary"
-        android:onClick="handleClick"
         android:textSize="14sp"
         android:text="Compare with Current" />
 

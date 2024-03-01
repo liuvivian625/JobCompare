@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
 
     <LinearLayout
@@ -32,7 +32,6 @@
             android:layout_height="56dp"
             android:layout_gravity="center"
             android:backgroundTint="@color/primary"
-            android:onClick="handleClick"
             android:textSize="14sp"
             android:text="Current Job"
             />
@@ -47,7 +46,6 @@
             android:layout_height="56dp"
             android:layout_gravity="center"
             android:backgroundTint="@color/primary"
-            android:onClick="handleClick"
             android:textSize="14sp"
             android:text="Job Offer" />
 
@@ -60,7 +58,6 @@
             android:layout_height="56dp"
             android:layout_gravity="center"
             android:backgroundTint="@color/primary"
-            android:onClick="handleClick"
             android:textSize="14sp"
             android:text="Comparison Settings" />
         <Space
@@ -72,7 +69,6 @@
             android:layout_height="56dp"
             android:layout_gravity="center"
             android:backgroundTint="@color/primary"
-            android:onClick="handleClick"
             android:textSize="14sp"
             android:text="Compare" />
 
