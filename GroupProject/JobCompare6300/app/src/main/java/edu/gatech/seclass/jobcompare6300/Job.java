@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Job {
 
-    private Integer jobID;
+    //private Integer jobID;
 
     private String jobTitle;
 
@@ -30,14 +30,14 @@ public class Job {
 
     private Float monthlyInternetStipend;
 
-    private Float isCurrentJob;
+    private Integer currentJobFlag;
 
     private Float score;
 
-    public Job (Integer jobID, String jobTitle, String company, Location location, Float costOfLiving, Float yearlySalary, Float adjustedYearlySalary,Float yearlyBonus,
-                Float adjustedYearlyBonus, Float numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Float isCurrentJob, Float score)
+    public Job (String jobTitle, String company, Location location, Float costOfLiving, Float yearlySalary, Float adjustedYearlySalary,Float yearlyBonus,
+                Float adjustedYearlyBonus, Float numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Integer currentJobFlag, Float score)
     {
-        this.jobID = jobID;
+        //this.jobID = jobID;
         this.jobTitle = jobTitle;
         this.company = company;
         this.location = location;
@@ -50,10 +50,15 @@ public class Job {
         this.homeBuyingFundPercentage = homeBuyingFundPercentage;
         this.personalHolidays = personalHolidays;
         this.monthlyInternetStipend = monthlyInternetStipend;
-        this.isCurrentJob = isCurrentJob;
+        this.currentJobFlag = currentJobFlag;
         this.score = score;
     }
 
+    public Job() {
+        //default constructor
+    }
+
+    /*
     public Integer getJobID() {
         return jobID;
     }
@@ -61,6 +66,7 @@ public class Job {
     public void setJobID(Integer jobID) {
         this.jobID = jobID;
     }
+    */
 
     public String getJobTitle() {
         return jobTitle;
@@ -158,12 +164,16 @@ public class Job {
         this.monthlyInternetStipend = monthlyInternetStipend;
     }
 
-    public Float getCurrentJob() {
-        return isCurrentJob;
+    public boolean isCurrentJob() {
+        return currentJobFlag == 1;
     }
 
-    public void setCurrentJob(Float currentJob) {
-        isCurrentJob = currentJob;
+    public Integer getCurrentJob() {
+        return currentJobFlag;
+    }
+
+    public void setCurrentJob(Integer currentJob) {
+        currentJobFlag = currentJob;
     }
 
     public Float getScore() {
