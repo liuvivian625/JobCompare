@@ -3,8 +3,10 @@ package edu.gatech.seclass.jobcompare6300;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,5 +47,41 @@ public class MainActivity extends AppCompatActivity {
 
         jobService = new JobService(jobCompareDatabase);
         rankJobService = new RankJobService(jobCompareDatabase);
+
+        Button currentJob = findViewById(R.id.buttonCurrentJob);
+        currentJob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CurrentJobActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button jobOffer = findViewById(R.id.buttonJobOffer);
+        jobOffer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, JobOfferActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button comparisonSettings = findViewById(R.id.buttonComparisonSettings);
+        comparisonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ComparisonSettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button compareJobs = findViewById(R.id.buttonCompare);
+        compareJobs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, JobRankActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
