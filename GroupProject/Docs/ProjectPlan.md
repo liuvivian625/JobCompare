@@ -2,11 +2,15 @@
 
 *This is the template for your project plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
+**Version 1**: Initial document for deliverable 2. 02/24/2024
+
+**Version 2**: Updated document. 3/02/2024
+
 **Author**: Team 191
 
 ## 1 Introduction
 
-*Here you introduce the product. Keep this  clean and simple, one or two sentences at most.*
+*Here you introduce the product. Keep this clean and simple, one or two sentences at most.*
 
 JobCompare is an android application that allows users to compare various details of job offers to help them choose the best offer for themselves.
 
