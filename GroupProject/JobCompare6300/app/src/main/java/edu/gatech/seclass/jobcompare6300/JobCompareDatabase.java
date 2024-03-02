@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Level;
 
 import java.util.logging.Logger;
@@ -278,6 +279,21 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         }
 
         return jobExists;
+    }
+
+    public boolean isCurrentJob(Job job)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        boolean isJobCurrent = false;
+        Job currentJob = fetchCurrentJob();
+
+        if(currentJob != null)
+        {
+            isJobCurrent = currentJob.equals(job);
+        }
+
+        return isJobCurrent;
     }
 
     public void resetDb()
