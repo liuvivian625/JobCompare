@@ -202,7 +202,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                     job.setAdjustedYearlyBonus(cursor.getFloat(9));
                     job.setHomeBuyingFundPercentage(cursor.getFloat(10));
                     job.setMonthlyInternetStipend(cursor.getFloat(11));
-                    job.setCurrentJob(cursor.getFloat(12));
+                    job.setCurrentJob(cursor.getInt(12));
                     job.setScore(cursor.getFloat(13));
                 }
             }
@@ -245,7 +245,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                     job.setAdjustedYearlyBonus(cursor.getFloat(9));
                     job.setHomeBuyingFundPercentage(cursor.getFloat(10));
                     job.setMonthlyInternetStipend(cursor.getFloat(11));
-                    job.setCurrentJob(cursor.getFloat(12));
+                    job.setCurrentJob(cursor.getInt(12));
                     job.setScore(cursor.getFloat(13));
 
                     allJobs.add(job);

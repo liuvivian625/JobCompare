@@ -30,12 +30,12 @@ public class Job {
 
     private Float monthlyInternetStipend;
 
-    private Float isCurrentJob;
+    private Integer currentJobFlag;
 
     private Float score;
 
     public Job (String jobTitle, String company, Location location, Float costOfLiving, Float yearlySalary, Float adjustedYearlySalary,Float yearlyBonus,
-                Float adjustedYearlyBonus, Float numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Float isCurrentJob, Float score)
+                Float adjustedYearlyBonus, Float numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Integer currentJobFlag, Float score)
     {
         //this.jobID = jobID;
         this.jobTitle = jobTitle;
@@ -50,7 +50,7 @@ public class Job {
         this.homeBuyingFundPercentage = homeBuyingFundPercentage;
         this.personalHolidays = personalHolidays;
         this.monthlyInternetStipend = monthlyInternetStipend;
-        this.isCurrentJob = isCurrentJob;
+        this.currentJobFlag = currentJobFlag;
         this.score = score;
     }
 
@@ -164,12 +164,16 @@ public class Job {
         this.monthlyInternetStipend = monthlyInternetStipend;
     }
 
-    public Float getCurrentJob() {
-        return isCurrentJob;
+    public boolean isCurrentJob() {
+        return currentJobFlag == 1;
     }
 
-    public void setCurrentJob(Float currentJob) {
-        isCurrentJob = currentJob;
+    public Integer getCurrentJob() {
+        return currentJobFlag;
+    }
+
+    public void setCurrentJob(Integer currentJob) {
+        currentJobFlag = currentJob;
     }
 
     public Float getScore() {
