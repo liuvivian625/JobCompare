@@ -97,7 +97,7 @@ public class JobService {
         jobs.add(currentJob);
 
         List<Job> prevJobOffers = jobCompareDatabase.fetchAllJobs();
-        Job lastOffer;
+        Job lastOffer = new Job();
         for(int i = prevJobOffers.size() - 1; i >= 0; i--) {
             Job offer = prevJobOffers.get(i);
             if(!offer.isCurrentJob()) {
@@ -117,7 +117,7 @@ public class JobService {
         float adjustedYearlyBonus = yearlyBonus * 100 / costOfLiving;
         float score = 1f;
 
-        return new Job(0, jobTitle, company, new Location(city, state), costOfLiving, yearlySalary,
+        return new Job(jobTitle, company, new Location(city, state), costOfLiving, yearlySalary,
                 adjustedYearlySalary, yearlyBonus, adjustedYearlyBonus, numShares, homeBuyingFundPercentage,
                 personalHolidays, monthlyInternetStipend, isCurrentJob, score);
     }
