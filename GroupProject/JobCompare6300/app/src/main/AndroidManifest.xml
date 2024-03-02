@@ -13,22 +13,22 @@
         android:theme="@style/Theme.JobCompare6300"
         >
         <activity
-            android:name=".ui.CompareTwoJobsActivity"
+            android:name=".CompareTwoJobsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.JobRankActivity"
+            android:name=".JobRankActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.JobOffer2Activity"
+            android:name=".JobOffer2Activity"
             android:exported="false" />
         <activity
-            android:name=".ui.ComparisonSettingsActivity"
+            android:name=".ComparisonSettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.CurrentJobActivity"
+            android:name=".CurrentJobActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package edu.gatech.seclass.jobcompare6300.ui;
+package edu.gatech.seclass.jobcompare6300;
 
 import android.content.Context;
 import android.util.AttributeSet;

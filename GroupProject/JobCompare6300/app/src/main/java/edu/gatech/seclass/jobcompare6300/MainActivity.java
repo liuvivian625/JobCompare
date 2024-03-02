@@ -1,4 +1,4 @@
-package edu.gatech.seclass.jobcompare6300.ui;
+package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import edu.gatech.seclass.jobcompare6300.Job;
-import edu.gatech.seclass.jobcompare6300.Location;
-import edu.gatech.seclass.jobcompare6300.R;
-import edu.gatech.seclass.jobcompare6300.JobCompareDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
