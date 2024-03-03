@@ -181,7 +181,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         }
     }
 
-    public Job fetchCurrentJob()
+    public Job fetchCurrentJob() throws MissingCurrentJobException
     {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
@@ -197,6 +197,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
             if (cursor.getCount() == 0)
             {
                 logger.log(Level.INFO, "ERROR: NO DATA");
+                throw new MissingCurrentJobException();
             }
             else
             {
