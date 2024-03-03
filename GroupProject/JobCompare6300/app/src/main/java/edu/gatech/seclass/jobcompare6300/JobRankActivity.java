@@ -33,7 +33,7 @@ public class JobRankActivity extends AppCompatActivity {
         rankedJobs.addAll(rankJobService.rankJobOffers());
 
         //placeholder
-        /*
+/*
         Job job1 = new Job("Software Engineer", "GaTech", new Location("Atlanta", "Georgia"), 150.0f, 100000.0f, 100000.0f, 15000.0f, 7500.0f, 1000.0f, 5.0f, 15, 25.0f, 1, 100.0f);
         Job job2 = new Job("Data Scientist", "Apple", new Location("Cupertino", "California"), 300.0f, 150000.0f, 125000.0f, 20000.0f, 7500.0f, 1000.0f, 15.0f, 12, 45.0f, 0, 90.0f);
         Job job3 = new Job("Data Scientist III", "Google", new Location("Mountain View", "California"), 400.0f, 300000.0f, 285000.0f, 20000.0f, 5500.0f, 500.0f, 12.0f, 13, 35.0f, 0, 80.0f);
@@ -42,7 +42,9 @@ public class JobRankActivity extends AppCompatActivity {
         rankedJobs.add(job2);
         rankedJobs.add(job3);
 
-         */
+ */
+
+
 
 
         int numChecked = 2; //user can only select 2 items

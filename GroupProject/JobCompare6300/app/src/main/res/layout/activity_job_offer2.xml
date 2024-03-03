@@ -58,7 +58,8 @@
         android:layout_gravity="center"
         android:backgroundTint="@color/primary"
         android:textSize="14sp"
-        android:text="Compare with Current" />
+        android:text="Compare with Current"
+        android:enabled="false"/>
 
 
 </LinearLayout>

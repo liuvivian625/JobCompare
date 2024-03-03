@@ -47,11 +47,8 @@ public class JobService {
      * @return current job object
      * @throws MissingCurrentJobException if current job has not been set
      */
-    public Job FetchCurrentJob() throws MissingCurrentJobException {
+    public Job FetchCurrentJob() {
         Job currentJob = jobCompareDatabase.fetchCurrentJob();
-        if (currentJob == null) {
-            throw new MissingCurrentJobException();
-        }
         return currentJob;
     }
 
@@ -73,7 +70,7 @@ public class JobService {
     public void addJobOffer(String jobTitle, String company, String city, String state, Float costOfLiving,
                               Float yearlySalary, Float yearlyBonus, Float numShares, Float homeBuyingFundPercentage,
                               Integer personalHolidays, Float monthlyInternetStipend) {
-        int isCurrentJob = 1;
+        int isCurrentJob = 0;
 
         Job job = createJob(jobTitle, company, city, state, costOfLiving, yearlySalary, yearlyBonus,
                 numShares, homeBuyingFundPercentage, personalHolidays, monthlyInternetStipend, isCurrentJob);

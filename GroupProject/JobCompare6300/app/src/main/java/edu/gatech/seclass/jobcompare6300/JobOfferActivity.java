@@ -59,7 +59,7 @@ public class JobOfferActivity extends AppCompatActivity implements View.OnClickL
             float costOfLiving = Float.parseFloat(inputCostOfLiving.getText().toString());
             float salary = Float.parseFloat(inputSalary.getText().toString());
             float bonus = Float.parseFloat(inputBonus.getText().toString());
-            float stock = Float.parseFloat(inputStock.getText().toString());
+            int stock = Integer.parseInt(inputStock.getText().toString());
             float homeFunds = Float.parseFloat(inputHomeFund.getText().toString());
             int holidays = Integer.parseInt(inputHolidays.getText().toString());
             float internet = Float.parseFloat(inputInternet.getText().toString());
