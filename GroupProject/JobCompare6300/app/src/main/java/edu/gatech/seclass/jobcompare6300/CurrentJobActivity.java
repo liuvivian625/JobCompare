@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CurrentJobActivity extends AppCompatActivity implements View.OnClickListener{
@@ -25,6 +28,8 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
     private JobCompareDatabase jobCompareDatabase;
     private JobService jobService;
     private Job currentJob;
+    Logger logger = Logger.getLogger(CurrentJobActivity.class.getName());
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +58,13 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
 
         //not working properly
 
-        currentJob = jobService.FetchCurrentJob();
-        if (currentJob != null){
+
+        try{
+            currentJob = jobService.FetchCurrentJob();
             inputTitle.setText(currentJob.getJobTitle());
             inputCompany.setText(currentJob.getCompany());
-            //inputCity.setText(currentJob.getLocation().getCity());
-            //inputState.setText(currentJob.getLocation().getState());
+            inputCity.setText(currentJob.getLocation().getCity());
+            inputState.setText(currentJob.getLocation().getState());
             inputCostOfLiving.setText(String.valueOf(currentJob.getCostOfLiving()));
             inputSalary.setText(String.valueOf(currentJob.getYearlySalary()));
             inputBonus.setText(String.valueOf(currentJob.getYearlyBonus()));
@@ -66,6 +72,9 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
             inputHomeFund.setText(String.valueOf(currentJob.getHomeBuyingFundPercentage()));
             inputHolidays.setText(String.valueOf(currentJob.getPersonalHolidays()));
             inputInternet.setText(String.valueOf(currentJob.getMonthlyInternetStipend()));
+        }
+        catch(MissingCurrentJobException e){
+            logger.log(Level.INFO, "Missing current Job");
         }
 
 

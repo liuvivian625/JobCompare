@@ -45,8 +45,6 @@ public class JobRankActivity extends AppCompatActivity {
  */
 
 
-
-
         int numChecked = 2; //user can only select 2 items
         ArrayList<CheckBox> checkboxesList = new ArrayList<>();
 
