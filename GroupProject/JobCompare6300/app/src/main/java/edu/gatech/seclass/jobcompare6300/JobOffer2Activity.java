@@ -7,9 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class JobOffer2Activity extends AppCompatActivity {
     private JobService jobService;
     private JobCompareDatabase jobCompareDatabase;
+    Logger logger = Logger.getLogger(JobCompareDatabase.class.getName());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +43,9 @@ public class JobOffer2Activity extends AppCompatActivity {
 
         Button compareWithCurrent = findViewById(R.id.buttonCompareWithCurrentJobOffer2);
         jobService = new JobService(jobCompareDatabase);
-        Job currentJob = jobService.FetchCurrentJob();
-        if (currentJob == null){
-            compareWithCurrent.setEnabled(false);
-        }else{
+
+        try{
+            Job currentJob = jobService.FetchCurrentJob();
             compareWithCurrent.setEnabled(true);
             compareWithCurrent.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -52,7 +55,9 @@ public class JobOffer2Activity extends AppCompatActivity {
                 }
             });
         }
-
+        catch (MissingCurrentJobException e){
+            logger.log(Level.INFO, "Missing current Job");
+        }
 
     }
 }
