@@ -27,7 +27,7 @@ public class JobService {
      * @param monthlyInternetStipend Float number in [0, 75]
      */
     public void addCurrentJob(String jobTitle, String company, String city, String state, Float costOfLiving,
-                                      Float yearlySalary, Float yearlyBonus, Float numShares, Float homeBuyingFundPercentage,
+                                      Float yearlySalary, Float yearlyBonus, Integer numShares, Float homeBuyingFundPercentage,
                                       Integer personalHolidays, Float monthlyInternetStipend) {
         int isCurrentJob = 1;
 
@@ -37,7 +37,7 @@ public class JobService {
         if (jobCompareDatabase.fetchCurrentJob() == null) {
             jobCompareDatabase.addJob(job);
         } else {
-            jobCompareDatabase.updateJob(job);
+            jobCompareDatabase.updateCurrentJob(job);
         }
     }
 
@@ -68,7 +68,7 @@ public class JobService {
      * @param monthlyInternetStipend Float number in [0, 75]
      */
     public void addJobOffer(String jobTitle, String company, String city, String state, Float costOfLiving,
-                              Float yearlySalary, Float yearlyBonus, Float numShares, Float homeBuyingFundPercentage,
+                              Float yearlySalary, Float yearlyBonus, Integer numShares, Float homeBuyingFundPercentage,
                               Integer personalHolidays, Float monthlyInternetStipend) {
         int isCurrentJob = 0;
 
@@ -108,7 +108,7 @@ public class JobService {
     }
 
     private Job createJob(String jobTitle, String company, String city, String state, Float costOfLiving,
-                          Float yearlySalary, Float yearlyBonus, Float numShares, Float homeBuyingFundPercentage,
+                          Float yearlySalary, Float yearlyBonus, Integer numShares, Float homeBuyingFundPercentage,
                           Integer personalHolidays, Float monthlyInternetStipend, int isCurrentJob) {
         float adjustedYearlySalary = yearlySalary * 100 / costOfLiving;
         float adjustedYearlyBonus = yearlyBonus * 100 / costOfLiving;

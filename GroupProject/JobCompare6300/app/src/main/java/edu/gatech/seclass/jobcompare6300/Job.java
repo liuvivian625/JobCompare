@@ -23,7 +23,7 @@ public class Job implements Serializable {
 
     private Float adjustedYearlyBonus;
 
-    private Float numShares;
+    private Integer numShares;
 
     private Float homeBuyingFundPercentage;
 
@@ -36,7 +36,7 @@ public class Job implements Serializable {
     private Float score;
 
     public Job (String jobTitle, String company, Location location, Float costOfLiving, Float yearlySalary, Float adjustedYearlySalary,Float yearlyBonus,
-                Float adjustedYearlyBonus, Float numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Integer currentJobFlag, Float score)
+                Float adjustedYearlyBonus, Integer numShares, Float homeBuyingFundPercentage, Integer personalHolidays, Float monthlyInternetStipend, Integer currentJobFlag, Float score)
     {
         //this.jobID = jobID;
         this.jobTitle = jobTitle;
@@ -133,11 +133,11 @@ public class Job implements Serializable {
         this.adjustedYearlyBonus = adjustedYearlyBonus;
     }
 
-    public Float getNumShares() {
+    public Integer getNumShares() {
         return numShares;
     }
 
-    public void setNumShares(Float numShares) {
+    public void setNumShares(Integer numShares) {
         this.numShares = numShares;
     }
 

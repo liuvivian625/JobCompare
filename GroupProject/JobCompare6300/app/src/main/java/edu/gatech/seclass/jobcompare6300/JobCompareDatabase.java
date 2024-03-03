@@ -36,13 +36,15 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String COLUMN_ADJUSTED_YEARLY_SALARY = "ADJUSTED_YEARLY_SALARY";
     public static final String COLUMN_YEARLY_BONUS = "YEARLY_BONUS";
     public static final String COLUMN_ADJUSTED_YEARLY_BONUS = "ADJUSTED_YEARLY_BONUS";
+    public static final String COLUMN_NUM_SHARES = "NUM_SHARES";
     public static final String COLUMN_HOME_BUYING_FUND_PERCENTAGE = "HOME_BUYING_FUND_PERCENTAGE";
+    public static final String COLUMN_HOLIDAYS = "HOLIDAYS";
     public static final String COLUMN_MONTHLY_INTERNET_STIPEND = "MONTHLY_INTERNET_STIPEND";
     public static final String COLUMN_IS_CURRENT_JOB = "IS_CURRENT_JOB";
     public static final String COLUMN_SCORE = "SCORE";
 
     //Queries for getting data
-    public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE IS_CURRENT_JOB = 1";
+    public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_IS_CURRENT_JOB + " = 1";
     public static final String QUERY_FETCH_ALL_JOBS = "SELECT * FROM " + TABLE_NAME;
     public static final String QUERY_UPDATE_CURRENT_JOB = "UPDATE " + TABLE_NAME + " SET "
             + COLUMN_JOB_TITLE + " =? "
@@ -68,7 +70,9 @@ public class JobCompareDatabase extends SQLiteOpenHelper
             + COLUMN_ADJUSTED_YEARLY_SALARY + " =? AND "
             + COLUMN_YEARLY_BONUS + " =? AND "
             + COLUMN_ADJUSTED_YEARLY_BONUS + " =? AND "
+            + COLUMN_NUM_SHARES + " =? AND "
             + COLUMN_HOME_BUYING_FUND_PERCENTAGE + " =? AND "
+            + COLUMN_HOLIDAYS + " =? AND "
             + COLUMN_MONTHLY_INTERNET_STIPEND + " =? AND "
             + COLUMN_IS_CURRENT_JOB + " =?";
 
@@ -96,7 +100,9 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                         COLUMN_ADJUSTED_YEARLY_SALARY + " REAL, " +
                         COLUMN_YEARLY_BONUS + " REAL, " +
                         COLUMN_ADJUSTED_YEARLY_BONUS + " REAL, " +
+                        COLUMN_NUM_SHARES + " INTEGER, " +
                         COLUMN_HOME_BUYING_FUND_PERCENTAGE + " REAL, " +
+                        COLUMN_HOLIDAYS + " INTEGER, " +
                         COLUMN_MONTHLY_INTERNET_STIPEND + " REAL, " +
                         COLUMN_IS_CURRENT_JOB + " INTEGER, " +
                         COLUMN_SCORE + " REAL);";
@@ -124,7 +130,9 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         cv.put(COLUMN_ADJUSTED_YEARLY_SALARY, job.getAdjustedYearlySalary());
         cv.put(COLUMN_YEARLY_BONUS, job.getYearlyBonus());
         cv.put(COLUMN_ADJUSTED_YEARLY_BONUS, job.getAdjustedYearlyBonus());
+        cv.put(COLUMN_NUM_SHARES, job.getNumShares());
         cv.put(COLUMN_HOME_BUYING_FUND_PERCENTAGE, job.getHomeBuyingFundPercentage());
+        cv.put(COLUMN_HOLIDAYS, job.getPersonalHolidays());
         cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, job.getMonthlyInternetStipend());
         cv.put(COLUMN_IS_CURRENT_JOB, job.getCurrentJob());
         cv.put(COLUMN_SCORE, job.getScore());
@@ -142,7 +150,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
     }
 
-    public void updateJob(Job job)
+    public void updateCurrentJob(Job job)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -156,7 +164,9 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         cv.put(COLUMN_ADJUSTED_YEARLY_SALARY, job.getAdjustedYearlySalary());
         cv.put(COLUMN_YEARLY_BONUS, job.getYearlyBonus());
         cv.put(COLUMN_ADJUSTED_YEARLY_BONUS, job.getAdjustedYearlyBonus());
+        cv.put(COLUMN_NUM_SHARES, job.getNumShares());
         cv.put(COLUMN_HOME_BUYING_FUND_PERCENTAGE, job.getHomeBuyingFundPercentage());
+        cv.put(COLUMN_HOLIDAYS, job.getPersonalHolidays());
         cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, job.getMonthlyInternetStipend());
         cv.put(COLUMN_IS_CURRENT_JOB, job.getCurrentJob());
 
@@ -201,10 +211,12 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                     job.setAdjustedYearlySalary(cursor.getFloat(7));
                     job.setYearlyBonus(cursor.getFloat(8));
                     job.setAdjustedYearlyBonus(cursor.getFloat(9));
-                    job.setHomeBuyingFundPercentage(cursor.getFloat(10));
-                    job.setMonthlyInternetStipend(cursor.getFloat(11));
-                    job.setCurrentJob(cursor.getInt(12));
-                    job.setScore(cursor.getFloat(13));
+                    job.setNumShares(cursor.getInt(10));
+                    job.setHomeBuyingFundPercentage(cursor.getFloat(11));
+                    job.setPersonalHolidays(cursor.getInt(12));
+                    job.setMonthlyInternetStipend(cursor.getFloat(13));
+                    job.setCurrentJob(cursor.getInt(14));
+                    job.setScore(cursor.getFloat(15));
                 }
             }
             cursor.close();
@@ -244,10 +256,12 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                     job.setAdjustedYearlySalary(cursor.getFloat(7));
                     job.setYearlyBonus(cursor.getFloat(8));
                     job.setAdjustedYearlyBonus(cursor.getFloat(9));
+                    job.setNumShares(cursor.getInt(10));
                     job.setHomeBuyingFundPercentage(cursor.getFloat(10));
-                    job.setMonthlyInternetStipend(cursor.getFloat(11));
-                    job.setCurrentJob(cursor.getInt(12));
-                    job.setScore(cursor.getFloat(13));
+                    job.setPersonalHolidays(cursor.getInt(11));
+                    job.setMonthlyInternetStipend(cursor.getFloat(12));
+                    job.setCurrentJob(cursor.getInt(13));
+                    job.setScore(cursor.getFloat(14));
 
                     allJobs.add(job);
                 }
@@ -269,7 +283,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
         String[] job_args = {job.getJobTitle(), job.getCompany(), job.getLocation().getCity(), job.getLocation().getState(), job.getCostOfLiving().toString(),
         job.getYearlySalary().toString(), job.getAdjustedYearlySalary().toString(), job.getYearlyBonus().toString(), job.getAdjustedYearlyBonus().toString(),
-        job.getHomeBuyingFundPercentage().toString(), job.getMonthlyInternetStipend().toString()};
+        job.getNumShares().toString(), job.getHomeBuyingFundPercentage().toString(), job.getPersonalHolidays().toString(), job.getMonthlyInternetStipend().toString()};
 
         Cursor cursor = db.rawQuery(QUERY_CHECK_JOB_EXISTS, job_args);
 
