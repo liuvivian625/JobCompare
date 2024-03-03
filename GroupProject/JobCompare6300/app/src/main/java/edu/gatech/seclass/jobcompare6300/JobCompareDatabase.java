@@ -43,7 +43,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String COLUMN_SCORE = "SCORE";
 
     //Queries for getting data
-    public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE IS_CURRENT_JOB = 1";
+    public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_IS_CURRENT_JOB + " = 1";
     public static final String QUERY_FETCH_ALL_JOBS = "SELECT * FROM " + TABLE_NAME;
     public static final String QUERY_UPDATE_CURRENT_JOB = "UPDATE " + TABLE_NAME + " SET "
             + COLUMN_JOB_TITLE + " =? "
