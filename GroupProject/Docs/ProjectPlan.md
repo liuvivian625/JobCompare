@@ -38,11 +38,10 @@ JobCompare is an android application that allows users to compare various detail
 
 ### Construction
 - The construction phase consists of a complete set of design, code and test cases. Code complete is achieved by completing all user stories, requirements and features. It also includes developing tests and testing the application which is achieved developing and thoroughly testing all features through various tests like integration, systems, and unit tests. It also includes finalizes documents for testing, design and user guides. Since this phase may be the longest, it can be split into muliple phases such as initial requirements and final application readiness. The exit and entrance criteria for both phases is different and as a team we have decided that we should have different requirements for each.
-- The initial requirements entrance criteria is having initial documents and a plan ready, thereby the team need to finalize the documents and begin coding in the next phase.
-- The initial exit requirements are to have basic features ready such as adding a new job and displaying all jobs ranked by score. The initial exit requirements also include finishing all documents including a project plan, design document, class diagrams, and any other diagrams. It also includes creating an initial set of tests that test the initial requirements that the team members have agreed upon.
-- 
-- The final entrance criteria is to have all documents already finished and initial requirement features and tests completed.
-- The final exit criteria is to finish all features, address all uses cases/requirements, have a full passing set of tests (integration, systems, unit tests), and be ready for deployment or submission of the application.
+- The **initial requirements for entrance criteria** is having initial documents and a plan ready, thereby the team need to finalize the documents and begin coding in the next phase.
+- The **initial requirements for exit criteria** are to have basic features ready such as adding a new job and displaying all jobs ranked by score. The initial exit requirements also include finishing all documents including a project plan, design document, class diagrams, and any other diagrams. It also includes creating an initial set of tests that test the initial requirements that the team members have agreed upon.
+- The **final requirements entrance criteria** is to have all documents already finished and initial requirement features and tests completed.
+- The **final requirements exit criteria** is to finish all features, address all uses cases/requirements, have a full passing set of tests (integration, systems, unit tests), and be ready for deployment or submission of the application.
 
 ### Transition
 - The transition phase consists of releasing the application, collecting bug reports and feature requests. If also includes releasing a new version if it is needed.
