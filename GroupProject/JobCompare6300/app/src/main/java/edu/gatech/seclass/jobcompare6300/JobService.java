@@ -34,10 +34,11 @@ public class JobService {
         Job job = createJob(jobTitle, company, city, state, costOfLiving, yearlySalary, yearlyBonus,
                 numShares, homeBuyingFundPercentage, personalHolidays, monthlyInternetStipend, isCurrentJob);
 
-        if (jobCompareDatabase.fetchCurrentJob() == null) {
-            jobCompareDatabase.addJob(job);
-        } else {
+        try {
+            jobCompareDatabase.fetchCurrentJob();
             jobCompareDatabase.updateCurrentJob(job);
+        } catch (MissingCurrentJobException e) {
+            jobCompareDatabase.addJob(job);
         }
     }
 
@@ -48,8 +49,8 @@ public class JobService {
      * @throws MissingCurrentJobException if current job has not been set
      */
     public Job FetchCurrentJob() {
-        Job currentJob = jobCompareDatabase.fetchCurrentJob();
-        return currentJob;
+        jobCompareDatabase.fetchCurrentJob();
+        return jobCompareDatabase.fetchCurrentJob();
     }
 
     /**
