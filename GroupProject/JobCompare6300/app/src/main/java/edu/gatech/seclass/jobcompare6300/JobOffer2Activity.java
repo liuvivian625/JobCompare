@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class JobOffer2Activity extends AppCompatActivity {
+    private JobService jobService;
+    private JobCompareDatabase jobCompareDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_offer2);
+
+        jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
 
         Button newOffer = findViewById(R.id.buttonNewOfferJobOffer2);
         newOffer.setOnClickListener(new View.OnClickListener() {
@@ -34,12 +38,21 @@ public class JobOffer2Activity extends AppCompatActivity {
         });
 
         Button compareWithCurrent = findViewById(R.id.buttonCompareWithCurrentJobOffer2);
-        compareWithCurrent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(JobOffer2Activity.this, CompareTwoJobsActivity.class);
-                startActivity(intent);
-            }
-        });
+        jobService = new JobService(jobCompareDatabase);
+        Job currentJob = jobService.FetchCurrentJob();
+        if (currentJob == null){
+            compareWithCurrent.setEnabled(false);
+        }else{
+            compareWithCurrent.setEnabled(true);
+            compareWithCurrent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(JobOffer2Activity.this, CompareTwoJobsActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+
     }
 }

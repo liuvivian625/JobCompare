@@ -6,19 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".CompareTwoJobsActivity">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/editTextText"
@@ -46,7 +42,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewTitle1"
+                    android:id="@+id/textViewTitle1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -55,13 +51,13 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewTitle2"
+                    android:id="@+id/textViewTitle2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     style="@style/TableContent"
                     android:background="@drawable/table_cell_border"
-                     />
+                    />
             </TableRow>
 
             <TableRow>
@@ -77,7 +73,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewCompany1"
+                    android:id="@+id/textViewCompany1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -86,7 +82,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewCompany2"
+                    android:id="@+id/textViewCompany2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -108,7 +104,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewLocation1"
+                    android:id="@+id/textViewLocation1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,7 +113,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewLocation2"
+                    android:id="@+id/textViewLocation2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -139,7 +135,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewAdjustedSalary1"
+                    android:id="@+id/textViewSalary1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -148,7 +144,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewAdjustedSalary2"
+                    android:id="@+id/textViewSalary2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -170,7 +166,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewAdjustedBonus1"
+                    android:id="@+id/textViewBonus1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -179,7 +175,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewAdjustedBonus2"
+                    android:id="@+id/textViewBonus2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -201,7 +197,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewStock1"
+                    android:id="@+id/textViewStock1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -210,7 +206,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewStock2"
+                    android:id="@+id/textViewStock2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -232,7 +228,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewHomeFund1"
+                    android:id="@+id/textViewHomeFund1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -241,7 +237,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewHomeFund2"
+                    android:id="@+id/textViewHomeFund2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -263,7 +259,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewHolidays1"
+                    android:id="@+id/textViewHolidays1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -272,7 +268,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewHolidays2"
+                    android:id="@+id/textViewHolidays2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -294,7 +290,7 @@
             <TableRow
                 android:background="@drawable/table_row_border">
                 <TextView
-                    android:id="@+id/textViewInternet1"
+                    android:id="@+id/textViewInternet1Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -303,7 +299,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textViewInternet2"
+                    android:id="@+id/textViewInternet2Compare2Jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -315,32 +311,32 @@
         </TableLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="24dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="24dp">
 
-            <Button
-                android:id="@+id/buttonNewComparisonCompareTwoJobs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Comparison"
-                android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/buttonNewComparisonCompareTwoJobs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Comparison"
+                        android:layout_weight="1"/>
 
-            <Space
-                android:layout_width="24dp"
-                android:layout_height="match_parent"
-                />
+                    <Space
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        />
 
-            <Button
-                android:id="@+id/buttonMainMenuCompareTwoJobs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Main Menu"
-                android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/buttonMainMenuCompareTwoJobs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Main Menu"
+                        android:layout_weight="1"/>
 
-        </LinearLayout>
+                </LinearLayout>
+
 
     </LinearLayout>
-</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

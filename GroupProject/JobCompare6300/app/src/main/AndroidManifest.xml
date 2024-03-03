@@ -11,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JobCompare6300"
-        >
+        android:name=".MyApplication">
+        <activity
+            android:name=".CompareWithCurrentActivity"
+            android:exported="false" />
         <activity
             android:name=".CompareTwoJobsActivity"
             android:exported="false" />
         <activity
             android:name=".JobRankActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JobOfferActivity"
             android:exported="false" />
         <activity
             android:name=".JobOffer2Activity"

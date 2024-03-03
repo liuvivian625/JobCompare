@@ -70,7 +70,8 @@
             android:layout_gravity="center"
             android:backgroundTint="@color/primary"
             android:textSize="14sp"
-            android:text="Compare" />
+            android:text="Compare"
+            />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

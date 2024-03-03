@@ -26,4 +26,9 @@ public class Location {
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return city + ", " + state;
+    }
 }

@@ -46,14 +46,14 @@
                 android:text="Yearly Salary" />
 
             <EditText
-                android:id="@+id/editTextNumberYearlySalary"
+                android:id="@+id/editTextNumberYearlySalaryWeight"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5"/>
+                android:text="@string/default_weight"/>
 
         </LinearLayout>
 
@@ -72,14 +72,14 @@
                 android:text="Yearly Bonus" />
 
             <EditText
-                android:id="@+id/editTextNumberYearlyBonus"
+                android:id="@+id/editTextNumberYearlyBonusWeight"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5"/>
+                android:text="@string/default_weight"/>
 
         </LinearLayout>
 
@@ -98,14 +98,14 @@
                 android:text="Number of Stock Option Shares" />
 
             <EditText
-                android:id="@+id/editTextNumberStocks"
+                android:id="@+id/editTextNumberStockWeight"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5"/>
+                android:text="@string/default_weight"/>
 
         </LinearLayout>
 
@@ -124,14 +124,14 @@
                 android:text="Home Buying Program Fund" />
 
             <EditText
-                android:id="@+id/editTextNumberHomeFund"
+                android:id="@+id/editTextNumberHomeFundWeight"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5"/>
+                android:text="@string/default_weight"/>
 
         </LinearLayout>
 
@@ -150,14 +150,14 @@
                 android:text="Personal Choice Holidays" />
 
             <EditText
-                android:id="@+id/editTextNumberHolidays"
+                android:id="@+id/editTextNumberHolidaysWeight"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5"/>
+                android:text="@string/default_weight"/>
 
         </LinearLayout>
 
@@ -176,14 +176,14 @@
                 android:text="Monthly Internet Stipend" />
 
             <EditText
-                android:id="@+id/editTextNumberInternet"
+                android:id="@+id/editTextNumberInternetWeight"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5" />
+                android:text="@string/default_weight" />
 
         </LinearLayout>
 
