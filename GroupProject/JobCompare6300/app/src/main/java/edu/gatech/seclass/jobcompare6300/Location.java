@@ -1,6 +1,8 @@
 package edu.gatech.seclass.jobcompare6300;
 
-public class Location {
+import java.io.Serializable;
+
+public class Location implements Serializable {
 
     private String city;
 
@@ -25,5 +27,10 @@ public class Location {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return city + ", " + state;
     }
 }

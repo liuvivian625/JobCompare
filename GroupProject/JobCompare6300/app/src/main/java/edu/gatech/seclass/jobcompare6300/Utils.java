@@ -1,23 +1,23 @@
 package edu.gatech.seclass.jobcompare6300;
 
 public class Utils {
-    public boolean ValidateStringInput(String input) {
+    public static boolean ValidateStringInput(String input) {
         return input.length() != 0;
     }
 
-    public boolean validateHomeBuyingFundPercentage(float homeBuyingFundPercentage) {
+    public static boolean validateHomeBuyingFundPercentage(float homeBuyingFundPercentage) {
         return homeBuyingFundPercentage <= 15;
     }
 
-    public boolean validateCostOfLiving(float costOfLiving) {
+    public static boolean validateCostOfLiving(float costOfLiving) {
         return costOfLiving > 0;
     }
 
-    public boolean validatePersonalHolidays(int personalHolidays) {
+    public static boolean validatePersonalHolidays(int personalHolidays) {
         return personalHolidays >= 0 && personalHolidays <= 20;
     }
 
-    public boolean validateMonthlyInternetStipend(float monthlyInternetStipend) {
+    public static boolean validateMonthlyInternetStipend(float monthlyInternetStipend) {
         return monthlyInternetStipend >= 0 && monthlyInternetStipend <= 75;
     }
 }

@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -229,7 +230,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
-        List<Job> allJobs = null;
+        List<Job> allJobs = new ArrayList<>();
 
         if (db != null)
         {

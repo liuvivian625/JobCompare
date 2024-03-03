@@ -39,7 +39,7 @@
                 android:text="Title" />
 
             <EditText
-                android:id="@+id/editTextTitle"
+                android:id="@+id/editTextTitleCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -66,7 +66,7 @@
                 android:text="Company" />
 
             <EditText
-                android:id="@+id/editTextCompany"
+                android:id="@+id/editTextCompanyCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -90,16 +90,38 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Location" />
+                android:text="City" />
 
             <EditText
-                android:id="@+id/editTextLocation"
+                android:id="@+id/editTextCityCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:ems="50"
                 android:inputType="text" />
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textView4_2"
+                style="@style/TextFieldNameLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="State" />
+
+            <EditText
+                android:id="@+id/editTextStateCurrentJob"
+                style="@style/TextFieldValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:ems="50"
+                android:inputType="text" />
+
+
 
         </LinearLayout>
 
@@ -120,7 +142,7 @@
                 android:text="Cost of Living" />
 
             <EditText
-                android:id="@+id/editTextLivingCost"
+                android:id="@+id/editTextLivingCostCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -147,7 +169,7 @@
                 android:text="Yearly Salary" />
 
             <EditText
-                android:id="@+id/editTextYearlySalary"
+                android:id="@+id/editTextYearlySalaryCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -174,7 +196,7 @@
                 android:text="Yearly Bonus" />
 
             <EditText
-                android:id="@+id/editTextYearlyBonus"
+                android:id="@+id/editTextYearlyBonusCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -201,7 +223,7 @@
                 android:text="Stock Option Shares" />
 
             <EditText
-                android:id="@+id/editTextStocks"
+                android:id="@+id/editTextStockCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -228,7 +250,7 @@
                 android:text="Home Buying Fund" />
 
             <EditText
-                android:id="@+id/editTextHomeFund"
+                android:id="@+id/editTextHomeFundCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -255,7 +277,7 @@
                 android:text="Personal Choice Holidays" />
 
             <EditText
-                android:id="@+id/editTextHolidays"
+                android:id="@+id/editTextHolidaysCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -282,7 +304,7 @@
                 android:text="Monthly Internet Stipend" />
 
             <EditText
-                android:id="@+id/editTextInternet"
+                android:id="@+id/editTextInternetCurrentJob"
                 style="@style/TextFieldValue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

@@ -1,8 +1,9 @@
 package edu.gatech.seclass.jobcompare6300;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Job {
+public class Job implements Serializable {
 
     //private Integer jobID;
 

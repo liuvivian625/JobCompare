@@ -20,46 +20,50 @@
             style="@style/BannerStyle"
             android:text="Compare Jobs" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="16dp">
+            <TextView
+                android:id="@+id/textViewTableTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TableHeader"
+                android:text="Title" />
+
+            <TextView
+                android:id="@+id/textViewTableCompany"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TableHeader"
+                android:text="Company" />
+
+            <TextView
+                android:id="@+id/textViewTableScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TableHeader"
+                android:text="Score" />
+
+            <TextView
+                android:id="@+id/textViewTableSelect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TableHeader"
+                android:text="Select" />
+        </LinearLayout>
+
         <TableLayout
+            android:id="@+id/tableLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:stretchColumns="*">
-
-            <TableRow>
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    style="@style/TableHeader"
-                    android:text="Title" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    style="@style/TableHeader"
-                    android:text="Company" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    style="@style/TableHeader"
-                    android:text="Score" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    style="@style/TableHeader"
-                    android:text="Select" />
-            </TableRow>
-
 
         </TableLayout>
 
@@ -74,7 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Compare"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:enabled="false"/>
 
             <Space
                 android:layout_width="24dp"

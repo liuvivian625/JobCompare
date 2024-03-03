@@ -1,21 +1,15 @@
 package edu.gatech.seclass.jobcompare6300;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private JobCompareDatabase jobCompareDatabase;
-    private JobService jobService;
+
     private RankJobService rankJobService;
 
     @Override
@@ -23,9 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Service initialization
-        jobCompareDatabase = new JobCompareDatabase(this);
-        jobCompareDatabase.resetDb();
+        jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
+
+        rankJobService = new RankJobService(jobCompareDatabase);
+
+        //jobCompareDatabase.resetDb();
+
 
 //        Job job = new Job("Software Engineer", "GaTech", new Location("Atlanta", "Georgia"), 10000.0f, 100000.0f, 75000.0f, 10000.0f, 7500.0f, 1000.0f, 5.0f, 15, 25.0f, 1, 5.0f);
 //
@@ -45,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
 //
 //        jobCompareDatabase.resetDb();
 
-        jobService = new JobService(jobCompareDatabase);
-        rankJobService = new RankJobService(jobCompareDatabase);
 
         Button currentJob = findViewById(R.id.buttonCurrentJob);
         currentJob.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button compareJobs = findViewById(R.id.buttonCompare);
+        //to-do:
+        //compare button to check if there are more than 2 jobs
+        //compareJobs.setEnabled(true);
         compareJobs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,5 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }
