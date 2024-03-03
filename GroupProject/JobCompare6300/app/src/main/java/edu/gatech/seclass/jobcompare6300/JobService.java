@@ -73,7 +73,7 @@ public class JobService {
     public void addJobOffer(String jobTitle, String company, String city, String state, Float costOfLiving,
                               Float yearlySalary, Float yearlyBonus, Float numShares, Float homeBuyingFundPercentage,
                               Integer personalHolidays, Float monthlyInternetStipend) {
-        int isCurrentJob = 0;
+        int isCurrentJob = 1;
 
         Job job = createJob(jobTitle, company, city, state, costOfLiving, yearlySalary, yearlyBonus,
                 numShares, homeBuyingFundPercentage, personalHolidays, monthlyInternetStipend, isCurrentJob);

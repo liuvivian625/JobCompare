@@ -31,17 +31,17 @@ public class JobOfferActivity extends AppCompatActivity implements View.OnClickL
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
 
-        inputTitle = (EditText)findViewById(R.id.editTextTitleJobOffer);
-        inputCompany = (EditText)findViewById(R.id.editTextCompanyJobOffer);
-        inputCity = (EditText)findViewById(R.id.editTextCityJobOffer);
-        inputState = (EditText)findViewById(R.id.editTextStateJobOffer);
-        inputCostOfLiving = (EditText)findViewById(R.id.editTextLivingCostJobOffer);
-        inputSalary = (EditText)findViewById(R.id.editTextYearlySalaryJobOffer);
-        inputBonus = (EditText)findViewById(R.id.editTextYearlyBonusJobOffer);
-        inputStock = (EditText)findViewById(R.id.editTextStockJobOffer);
-        inputHomeFund = (EditText) findViewById(R.id.editTextHomeFundJobOffer);
-        inputHolidays = (EditText)findViewById(R.id.editTextHolidaysJobOffer);
-        inputInternet = (EditText)findViewById(R.id.editTextInternetJobOffer);
+        inputTitle = findViewById(R.id.editTextTitleJobOffer);
+        inputCompany = findViewById(R.id.editTextCompanyJobOffer);
+        inputCity = findViewById(R.id.editTextCityJobOffer);
+        inputState = findViewById(R.id.editTextStateJobOffer);
+        inputCostOfLiving = findViewById(R.id.editTextLivingCostJobOffer);
+        inputSalary = findViewById(R.id.editTextYearlySalaryJobOffer);
+        inputBonus = findViewById(R.id.editTextYearlyBonusJobOffer);
+        inputStock = findViewById(R.id.editTextStockJobOffer);
+        inputHomeFund = findViewById(R.id.editTextHomeFundJobOffer);
+        inputHolidays = findViewById(R.id.editTextHolidaysJobOffer);
+        inputInternet = findViewById(R.id.editTextInternetJobOffer);
 
         Button save = findViewById(R.id.buttonSaveJobOffer);
         Button cancel = findViewById(R.id.buttonCancelJobOffer);
@@ -100,7 +100,7 @@ public class JobOfferActivity extends AppCompatActivity implements View.OnClickL
                     && Utils.validateMonthlyInternetStipend(internet)) {
                 //location
                 new JobService(jobCompareDatabase).addJobOffer(title, company, city, state, costOfLiving, salary, bonus, stock, homeFunds, holidays, internet);
-                Intent intent = new Intent(JobOfferActivity.this, MainActivity.class);
+                Intent intent = new Intent(JobOfferActivity.this, JobOffer2Activity.class);
                 startActivity(intent);
             }
 

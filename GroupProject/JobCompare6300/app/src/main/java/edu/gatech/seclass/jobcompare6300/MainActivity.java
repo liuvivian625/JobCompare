@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
+
         rankJobService = new RankJobService(jobCompareDatabase);
 
         //jobCompareDatabase.resetDb();

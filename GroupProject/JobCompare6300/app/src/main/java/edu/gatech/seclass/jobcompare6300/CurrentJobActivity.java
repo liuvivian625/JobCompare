@@ -52,7 +52,7 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
         cancel.setOnClickListener(this);
 
         //not working properly
-        /*
+
         currentJob = jobService.FetchCurrentJob();
         if (currentJob != null){
             inputTitle.setText(currentJob.getJobTitle());
@@ -68,7 +68,6 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
             inputInternet.setText(String.valueOf(currentJob.getMonthlyInternetStipend()));
         }
 
-         */
 
     }
 

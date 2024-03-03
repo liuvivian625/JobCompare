@@ -1,6 +1,8 @@
 package edu.gatech.seclass.jobcompare6300;
 
-public class Location {
+import java.io.Serializable;
+
+public class Location implements Serializable {
 
     private String city;
 

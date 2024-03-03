@@ -13,6 +13,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,27 +29,28 @@ public class JobRankActivity extends AppCompatActivity {
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
 
-        TableLayout tableLayout = findViewById(R.id.tableLayout);
-
         RankJobService rankJobService = new RankJobService(jobCompareDatabase);
-        //rankedJobs.addAll(rankJobService.rankJobOffers());
+        rankedJobs.addAll(rankJobService.rankJobOffers());
 
         //placeholder
-        Job job1 = new Job("Software Engineer", "GaTech", new Location("Atlanta", "Georgia"), 10000.0f, 100000.0f, 75000.0f, 10000.0f, 7500.0f, 1000.0f, 5.0f, 15, 25.0f, 1, 100.0f);
-        Job job2 = new Job("Data Scientist", "Apple", new Location("Cupertino", "California"), 1000.0f, 100000.0f, 75000.0f, 10000.0f, 7500.0f, 1000.0f, 5.0f, 15, 25.0f, 1, 50.0f);
-        Job job3 = new Job("Data Scientist III", "Google", new Location("Cupertino", "California"), 1000.0f, 100000.0f, 75000.0f, 10000.0f, 7500.0f, 1000.0f, 5.0f, 15, 25.0f, 1, 30.0f);
+        /*
+        Job job1 = new Job("Software Engineer", "GaTech", new Location("Atlanta", "Georgia"), 150.0f, 100000.0f, 100000.0f, 15000.0f, 7500.0f, 1000.0f, 5.0f, 15, 25.0f, 1, 100.0f);
+        Job job2 = new Job("Data Scientist", "Apple", new Location("Cupertino", "California"), 300.0f, 150000.0f, 125000.0f, 20000.0f, 7500.0f, 1000.0f, 15.0f, 12, 45.0f, 0, 90.0f);
+        Job job3 = new Job("Data Scientist III", "Google", new Location("Mountain View", "California"), 400.0f, 300000.0f, 285000.0f, 20000.0f, 5500.0f, 500.0f, 12.0f, 13, 35.0f, 0, 80.0f);
 
         rankedJobs.add(job1);
         rankedJobs.add(job2);
         rankedJobs.add(job3);
 
+         */
+
 
         int numChecked = 2; //user can only select 2 items
         ArrayList<CheckBox> checkboxesList = new ArrayList<>();
 
-        Button compare = findViewById(R.id.buttonCompareJobRank);
-
+        TableLayout tableLayout = findViewById(R.id.tableLayout);
         //generate table
+        //to-do: indicate current job
         for(Job job:rankedJobs){
             TableRow row = new TableRow(this);
 
@@ -65,11 +67,14 @@ public class JobRankActivity extends AppCompatActivity {
             row.addView(outputScore);
 
             CheckBox checkBox = new CheckBox(this);
+            checkBox.setTag(job);
             checkboxesList.add(checkBox);
             row.addView(checkBox);
 
             tableLayout.addView(row);
         }
+
+        Button compare = findViewById(R.id.buttonCompareJobRank);
 
         final int[] count = {0};
         for (CheckBox checkbox : checkboxesList) {
@@ -91,11 +96,11 @@ public class JobRankActivity extends AppCompatActivity {
             });
         }
 
+
         compare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(JobRankActivity.this, CompareTwoJobsActivity.class);
-                startActivity(intent);
+                onCompareClicked();
             }
         });
 
@@ -114,16 +119,29 @@ public class JobRankActivity extends AppCompatActivity {
             View rowView = tableLayout.getChildAt(i);
             if (rowView instanceof TableRow) {
                 TableRow row = (TableRow) rowView;
-                // traverse cells
-                for (int j = 0; j < row.getChildCount(); j++) {
-                    View cellView = row.getChildAt(j);
-                    if (cellView instanceof CheckBox) {
-                        CheckBox checkBox = (CheckBox) cellView;
-                        checkBox.setChecked(false);
-                    }
+                CheckBox checkBox = (CheckBox) row.getChildAt(3);
+                checkBox.setChecked(false);
+            }
+        }
+    }
+
+    private void onCompareClicked(){
+        List<Job> selectedJobs = new ArrayList<>();
+        TableLayout tableLayout = findViewById(R.id.tableLayout);
+        for (int i = 0; i < tableLayout.getChildCount(); i++) {
+            View rowView = tableLayout.getChildAt(i);
+            if (rowView instanceof TableRow) {
+                TableRow row = (TableRow) rowView;
+                CheckBox checkBox = (CheckBox) row.getChildAt(3);
+                if (checkBox.isChecked()) {
+                    Job selectedJob = (Job) checkBox.getTag();
+                    selectedJobs.add(selectedJob);
                 }
             }
         }
+        Intent intent = new Intent(JobRankActivity.this, CompareTwoJobsActivity.class);
+        intent.putExtra("selectedJobs", (Serializable) selectedJobs);
+        startActivity(intent);
     }
 
 

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CompareWithCurrentActivity extends AppCompatActivity {
@@ -35,6 +36,8 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
     private TextView outputHolidays2;
     private TextView outputInternet2;
 
+    private List<Job> jobs = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +46,13 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
 
         jobService = new JobService(jobCompareDatabase);
-        List<Job> jobs = jobService.displayCurrentJobAndOffer();
+        jobs.addAll(jobService.displayCurrentJobAndOffer());
         Job currentJob = jobs.get(0);
         Job jobOffer = jobs.get(1);
 
         outputTitle1 = findViewById(R.id.textViewTitle1CompareWCur);
         outputCompany1 = findViewById(R.id.textViewCompany1CompareWCur);
-        outputLocation1 = findViewById(R.id.textViewLocation1CompareWCur);
+        //outputLocation1 = findViewById(R.id.textViewLocation1CompareWCur);
         outputSalary1 = findViewById(R.id.textViewSalary1CompareWCur);
         outputBonus1 = findViewById(R.id.textViewBonus1CompareWCur);
         outputStock1 = findViewById(R.id.textViewStock1CompareWCur);
@@ -59,7 +62,7 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         outputTitle2 = findViewById(R.id.textViewTitle2CompareWCur);
         outputCompany2 = findViewById(R.id.textViewCompany2CompareWCur);
-        outputLocation2 = findViewById(R.id.textViewLocation2CompareWCur);
+        //outputLocation2 = findViewById(R.id.textViewLocation2CompareWCur);
         outputSalary2 = findViewById(R.id.textViewSalary2CompareWCur);
         outputBonus2 = findViewById(R.id.textViewBonus2CompareWCur);
         outputStock2 = findViewById(R.id.textViewStock2CompareWCur);
@@ -69,7 +72,7 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         outputTitle1.setText(currentJob.getJobTitle());
         outputCompany1.setText(currentJob.getCompany());
-        outputLocation1.setText(currentJob.getLocation().toString());
+        //outputLocation1.setText(currentJob.getLocation().toString());
         outputSalary1.setText(String.valueOf(currentJob.getAdjustedYearlySalary()));
         outputBonus1.setText(String.valueOf(currentJob.getAdjustedYearlyBonus()));
         outputStock1.setText(String.valueOf(currentJob.getNumShares()));
@@ -79,7 +82,7 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         outputTitle2.setText(jobOffer.getJobTitle());
         outputCompany2.setText(jobOffer.getCompany());
-        outputLocation2.setText(jobOffer.getLocation().toString());
+        //outputLocation2.setText(jobOffer.getLocation().toString());
         outputSalary2.setText(String.valueOf(jobOffer.getAdjustedYearlySalary()));
         outputBonus2.setText(String.valueOf(jobOffer.getAdjustedYearlyBonus()));
         outputStock2.setText(String.valueOf(jobOffer.getNumShares()));
@@ -89,7 +92,6 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         Button mainMenu = findViewById(R.id.buttonMainMenuCompareWCur);
         mainMenu.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CompareWithCurrentActivity.this, MainActivity.class);
