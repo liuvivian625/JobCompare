@@ -52,7 +52,7 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         outputTitle1 = findViewById(R.id.textViewTitle1CompareWCur);
         outputCompany1 = findViewById(R.id.textViewCompany1CompareWCur);
-        //outputLocation1 = findViewById(R.id.textViewLocation1CompareWCur);
+        outputLocation1 = findViewById(R.id.textViewLocation1CompareWCur);
         outputSalary1 = findViewById(R.id.textViewSalary1CompareWCur);
         outputBonus1 = findViewById(R.id.textViewBonus1CompareWCur);
         outputStock1 = findViewById(R.id.textViewStock1CompareWCur);
@@ -62,7 +62,7 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         outputTitle2 = findViewById(R.id.textViewTitle2CompareWCur);
         outputCompany2 = findViewById(R.id.textViewCompany2CompareWCur);
-        //outputLocation2 = findViewById(R.id.textViewLocation2CompareWCur);
+        outputLocation2 = findViewById(R.id.textViewLocation2CompareWCur);
         outputSalary2 = findViewById(R.id.textViewSalary2CompareWCur);
         outputBonus2 = findViewById(R.id.textViewBonus2CompareWCur);
         outputStock2 = findViewById(R.id.textViewStock2CompareWCur);
@@ -72,7 +72,7 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         outputTitle1.setText(currentJob.getJobTitle());
         outputCompany1.setText(currentJob.getCompany());
-        //outputLocation1.setText(currentJob.getLocation().toString());
+        outputLocation1.setText(currentJob.getLocation().toString());
         outputSalary1.setText(String.valueOf(currentJob.getAdjustedYearlySalary()));
         outputBonus1.setText(String.valueOf(currentJob.getAdjustedYearlyBonus()));
         outputStock1.setText(String.valueOf(currentJob.getNumShares()));
@@ -82,7 +82,7 @@ public class CompareWithCurrentActivity extends AppCompatActivity {
 
         outputTitle2.setText(jobOffer.getJobTitle());
         outputCompany2.setText(jobOffer.getCompany());
-        //outputLocation2.setText(jobOffer.getLocation().toString());
+        outputLocation2.setText(jobOffer.getLocation().toString());
         outputSalary2.setText(String.valueOf(jobOffer.getAdjustedYearlySalary()));
         outputBonus2.setText(String.valueOf(jobOffer.getAdjustedYearlyBonus()));
         outputStock2.setText(String.valueOf(jobOffer.getNumShares()));
