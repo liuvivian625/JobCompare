@@ -28,7 +28,7 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
     private JobCompareDatabase jobCompareDatabase;
     private JobService jobService;
     private Job currentJob;
-    Logger logger = Logger.getLogger(CurrentJobActivity.class.getName());
+    private static final Logger logger = Logger.getLogger(CurrentJobActivity.class.getName());
 
 
     protected void onCreate(Bundle savedInstanceState) {

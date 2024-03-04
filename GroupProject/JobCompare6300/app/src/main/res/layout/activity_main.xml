@@ -71,6 +71,7 @@
             android:backgroundTint="@color/primary"
             android:textSize="14sp"
             android:text="Compare"
+            android:enabled="false"
             />
 
     </LinearLayout>
