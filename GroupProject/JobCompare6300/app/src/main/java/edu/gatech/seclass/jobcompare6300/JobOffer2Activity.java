@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 public class JobOffer2Activity extends AppCompatActivity {
     private JobService jobService;
     private JobCompareDatabase jobCompareDatabase;
-    Logger logger = Logger.getLogger(JobCompareDatabase.class.getName());
+    private static final Logger logger = Logger.getLogger(JobOffer2Activity.class.getName());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

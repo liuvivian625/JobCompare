@@ -28,7 +28,7 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
     private JobCompareDatabase jobCompareDatabase;
     private JobService jobService;
     private Job currentJob;
-    Logger logger = Logger.getLogger(CurrentJobActivity.class.getName());
+    private static final Logger logger = Logger.getLogger(CurrentJobActivity.class.getName());
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,53 +83,18 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.buttonSaveCurrentJob) {
-            String title = inputTitle.getText().toString();
-            String company = inputCompany.getText().toString();
-            String city = inputCity.getText().toString();
-            String state = inputState.getText().toString();
-            float costOfLiving = Float.parseFloat(inputCostOfLiving.getText().toString());
-            float salary = Float.parseFloat(inputSalary.getText().toString());
-            float bonus = Float.parseFloat(inputBonus.getText().toString());
-            int stock = Integer.parseInt(inputStock.getText().toString());
-            float homeFunds = Float.parseFloat(inputHomeFund.getText().toString());
-            int holidays = Integer.parseInt(inputHolidays.getText().toString());
-            float internet = Float.parseFloat(inputInternet.getText().toString());
-
-
-            //to-do: refine error messages
-            if(!Utils.ValidateStringInput(title)){
-                inputTitle.setError("Input is invalid!");
-            }
-            if(!Utils.ValidateStringInput(company)){
-                inputCompany.setError("Input is invalid!");
-            }
-            if(!Utils.ValidateStringInput(city)){
-                inputCity.setError("Input is invalid!");
-            }
-            if(!Utils.ValidateStringInput(state)){
-                inputState.setError("Input is invalid!");
-            }
-            if(!Utils.validateCostOfLiving(costOfLiving)){
-                inputCostOfLiving.setError("Input is invalid!");
-            }
-            if(!Utils.validateHomeBuyingFundPercentage(homeFunds)){
-                inputHomeFund.setError("Input is invalid!");
-            }
-            if(!Utils.validatePersonalHolidays(holidays)){
-                inputHolidays.setError("Input is invalid!");
-            }
-            if(!Utils.validateMonthlyInternetStipend(internet)){
-                inputInternet.setError("Input is invalid!");
-            }
-
-            if (Utils.ValidateStringInput(title)
-                    && Utils.ValidateStringInput(company)
-                    && Utils.ValidateStringInput(city)
-                    && Utils.ValidateStringInput(state)
-                    && Utils.validateCostOfLiving(costOfLiving)
-                    && Utils.validateHomeBuyingFundPercentage(homeFunds)
-                    && Utils.validatePersonalHolidays(holidays)
-                    && Utils.validateMonthlyInternetStipend(internet)) {
+            if(validateInputs()){
+                String title = inputTitle.getText().toString();
+                String company = inputCompany.getText().toString();
+                String city = inputCity.getText().toString();
+                String state = inputState.getText().toString();
+                float costOfLiving = Float.parseFloat(inputCostOfLiving.getText().toString());
+                float salary = Float.parseFloat(inputSalary.getText().toString());
+                float bonus = Float.parseFloat(inputBonus.getText().toString());
+                int stock = Integer.parseInt(inputStock.getText().toString());
+                float homeFunds = Float.parseFloat(inputHomeFund.getText().toString());
+                int holidays = Integer.parseInt(inputHolidays.getText().toString());
+                float internet = Float.parseFloat(inputInternet.getText().toString());
                 new JobService(jobCompareDatabase).addCurrentJob(title, company, city, state, costOfLiving, salary, bonus, stock, homeFunds, holidays, internet);
                 Intent intent = new Intent(CurrentJobActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -141,11 +106,89 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
 
     }
 
+    private boolean validateInputs(){
+        String title = inputTitle.getText().toString();
+        String company = inputCompany.getText().toString();
+        String city = inputCity.getText().toString();
+        String state = inputState.getText().toString();
+        String costOfLivingString = inputCostOfLiving.getText().toString();
+        String salaryString = inputSalary.getText().toString();
+        String bonusString = inputBonus.getText().toString();
+        String stockString = inputStock.getText().toString();
+        String homeFundsString = inputHomeFund.getText().toString();
+        String holidaysString = inputHolidays.getText().toString();
+        String internetString = inputInternet.getText().toString();
 
-
-
-
-
+        if(!Utils.ValidateStringInput(title)){
+            inputTitle.setError("Can't be empty!");
+            return false;
+        }
+        if(!Utils.ValidateStringInput(company)){
+            inputCompany.setError("Can't be empty!");
+            return false;
+        }
+        if(!Utils.ValidateStringInput(city)){
+            inputCity.setError("Can't be empty!");
+            return false;
+        }
+        if(!Utils.ValidateStringInput(state)){
+            inputState.setError("Can't be empty!");
+            return false;
+        }
+        if(!Utils.ValidateStringInput(costOfLivingString)){
+            inputCostOfLiving.setError("Please enter a number larger than 0.");
+            return false;
+        }else{
+            float costOfLiving = Float.parseFloat(costOfLivingString);
+            if(!Utils.validateCostOfLiving(costOfLiving)) {
+                inputCostOfLiving.setError("Please enter a number larger than 0.");
+                return false;
+            }
+        }
+        if(!Utils.ValidateStringInput(salaryString)){
+            inputSalary.setError("Please enter a number.");
+            return false;
+        }
+        if(!Utils.ValidateStringInput(bonusString)){
+            inputBonus.setError("Please enter a number.");
+            return false;
+        }
+        if(!Utils.ValidateStringInput(stockString)){
+            inputStock.setError("Please enter a number.");
+            return false;
+        }
+        if(!Utils.ValidateStringInput(homeFundsString)){
+            inputHomeFund.setError("Please enter a number no more than 15.");
+            return false;
+        }else{
+            float homeFunds = Float.parseFloat(homeFundsString);
+            if(!Utils.validateHomeBuyingFundPercentage(homeFunds)) {
+                inputHomeFund.setError("Please enter a number no more than 15.");
+                return false;
+            }
+        }
+        if(!Utils.ValidateStringInput(holidaysString)){
+            inputHolidays.setError("Please enter a number between 0 and 20.");
+            return false;
+        }else{
+            int holidays = Integer.parseInt(holidaysString);
+            if(!Utils.validatePersonalHolidays(holidays)) {
+                inputHolidays.setError("Please enter a number between 0 and 20.");
+                return false;
+            }
+        }
+        if(!Utils.ValidateStringInput(internetString)){
+            inputInternet.setError("Please enter a number between 0 and 75.");
+            return false;
+        }else{
+            float internet = Float.parseFloat(internetString);
+            if(!Utils.validateMonthlyInternetStipend(internet)){
+                inputInternet.setError("Please enter a number between 0 and 75.");
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 }

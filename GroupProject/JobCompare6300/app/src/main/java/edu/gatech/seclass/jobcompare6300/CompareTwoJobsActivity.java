@@ -89,8 +89,6 @@ public class CompareTwoJobsActivity extends AppCompatActivity {
             outputInternet2.setText(String.valueOf(job2.getMonthlyInternetStipend()));
         }
 
-
-
         Button newComparison = findViewById(R.id.buttonNewComparisonCompareTwoJobs);
         newComparison.setOnClickListener(new View.OnClickListener() {
             @Override
