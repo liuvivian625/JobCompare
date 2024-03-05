@@ -64,4 +64,9 @@ public class ComparisonSettings {
     public void setMonthlyInternetStipendWeight(int monthlyInternetStipendWeight) {
         this.monthlyInternetStipendWeight = monthlyInternetStipendWeight;
     }
+
+    public int getTotalWeight() {
+        return this.yearlySalaryWeight + this.yearlyBonusWeight + this.numOfStockWeight +
+                this.homeBuyingFundWeight + this.personalHolidaysWeight + this.monthlyInternetStipendWeight;
+    }
 }

@@ -113,10 +113,9 @@ public class JobService {
                           Integer personalHolidays, Float monthlyInternetStipend, int isCurrentJob) {
         float adjustedYearlySalary = yearlySalary * 100 / costOfLiving;
         float adjustedYearlyBonus = yearlyBonus * 100 / costOfLiving;
-        float score = 1f;
 
         return new Job(jobTitle, company, new Location(city, state), costOfLiving, yearlySalary,
                 adjustedYearlySalary, yearlyBonus, adjustedYearlyBonus, numShares, homeBuyingFundPercentage,
-                personalHolidays, monthlyInternetStipend, isCurrentJob, score);
+                personalHolidays, monthlyInternetStipend, isCurrentJob);
     }
 }

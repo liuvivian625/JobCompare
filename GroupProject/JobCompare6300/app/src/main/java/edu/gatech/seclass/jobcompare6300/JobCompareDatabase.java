@@ -41,7 +41,6 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String COLUMN_HOLIDAYS = "HOLIDAYS";
     public static final String COLUMN_MONTHLY_INTERNET_STIPEND = "MONTHLY_INTERNET_STIPEND";
     public static final String COLUMN_IS_CURRENT_JOB = "IS_CURRENT_JOB";
-    public static final String COLUMN_SCORE = "SCORE";
 
     //Queries for getting data
     public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_IS_CURRENT_JOB + " = 1";
@@ -104,8 +103,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                         COLUMN_HOME_BUYING_FUND_PERCENTAGE + " REAL, " +
                         COLUMN_HOLIDAYS + " INTEGER, " +
                         COLUMN_MONTHLY_INTERNET_STIPEND + " REAL, " +
-                        COLUMN_IS_CURRENT_JOB + " INTEGER, " +
-                        COLUMN_SCORE + " REAL);";
+                        COLUMN_IS_CURRENT_JOB + " INTEGER);";
 
         sqLiteDatabase.execSQL(createDB);
     }
@@ -135,7 +133,6 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         cv.put(COLUMN_HOLIDAYS, job.getPersonalHolidays());
         cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, job.getMonthlyInternetStipend());
         cv.put(COLUMN_IS_CURRENT_JOB, job.getCurrentJob());
-        cv.put(COLUMN_SCORE, job.getScore());
 
         long result = db.insert(TABLE_NAME, null, cv);
 
@@ -217,7 +214,6 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                     job.setPersonalHolidays(cursor.getInt(12));
                     job.setMonthlyInternetStipend(cursor.getFloat(13));
                     job.setCurrentJob(cursor.getInt(14));
-                    job.setScore(cursor.getFloat(15));
                 }
             }
             cursor.close();
@@ -258,11 +254,10 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                     job.setYearlyBonus(cursor.getFloat(8));
                     job.setAdjustedYearlyBonus(cursor.getFloat(9));
                     job.setNumShares(cursor.getInt(10));
-                    job.setHomeBuyingFundPercentage(cursor.getFloat(10));
-                    job.setPersonalHolidays(cursor.getInt(11));
-                    job.setMonthlyInternetStipend(cursor.getFloat(12));
-                    job.setCurrentJob(cursor.getInt(13));
-                    job.setScore(cursor.getFloat(14));
+                    job.setHomeBuyingFundPercentage(cursor.getFloat(11));
+                    job.setPersonalHolidays(cursor.getInt(12));
+                    job.setMonthlyInternetStipend(cursor.getFloat(13));
+                    job.setCurrentJob(cursor.getInt(14));
 
                     allJobs.add(job);
                 }
