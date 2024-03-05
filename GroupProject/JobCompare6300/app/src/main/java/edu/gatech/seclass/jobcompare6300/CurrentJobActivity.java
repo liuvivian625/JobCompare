@@ -56,9 +56,6 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
         save.setOnClickListener(this);
         cancel.setOnClickListener(this);
 
-        //not working properly
-
-
         try{
             currentJob = jobService.FetchCurrentJob();
             inputTitle.setText(currentJob.getJobTitle());
@@ -76,7 +73,6 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
         catch(MissingCurrentJobException e){
             logger.log(Level.INFO, "Missing current Job");
         }
-
 
     }
 

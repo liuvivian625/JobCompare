@@ -53,7 +53,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="@string/default_weight"/>
+                />
 
         </LinearLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="@string/default_weight"/>
+                />
 
         </LinearLayout>
 
@@ -105,7 +105,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="@string/default_weight"/>
+                />
 
         </LinearLayout>
 
@@ -131,7 +131,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="@string/default_weight"/>
+                />
 
         </LinearLayout>
 
@@ -157,7 +157,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="@string/default_weight"/>
+                />
 
         </LinearLayout>
 
@@ -183,7 +183,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="@string/default_weight" />
+                />
 
         </LinearLayout>
 
