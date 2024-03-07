@@ -64,12 +64,12 @@ public class JobRankActivity extends AppCompatActivity {
             TextView outputCompany = new TextView(this);
             outputCompany.setText(job.getCompany());
             if(job.isCurrentJob()){
-                outputTitle.setTextColor(getResources().getColor(R.color.text_highlight));
+                outputCompany.setTextColor(getResources().getColor(R.color.text_highlight));
             }
             row.addView(outputCompany);
 
             TextView outputScore = new TextView(this);
-            outputScore.setText(String.valueOf(job.getScore()));
+            outputScore.setText(String.valueOf(1));
             if(job.isCurrentJob()){
                 outputTitle.setTextColor(getResources().getColor(R.color.text_highlight));
             }
