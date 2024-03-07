@@ -12,7 +12,8 @@ public class MyApplication extends Application {
         jobCompareDatabase = new JobCompareDatabase(this);
         jobCompareDatabase.resetDb();
 
-        comparisonSettings = new ComparisonSettings(1,1,1,1,1,1);
+        int defaultWeight = Integer.parseInt(getResources().getString(R.string.default_weight));
+        comparisonSettings = new ComparisonSettings(defaultWeight,defaultWeight,defaultWeight,defaultWeight,defaultWeight,defaultWeight);
 
     }
 

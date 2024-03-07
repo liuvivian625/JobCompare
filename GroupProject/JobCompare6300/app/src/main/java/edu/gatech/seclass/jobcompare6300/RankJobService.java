@@ -55,7 +55,7 @@ public class RankJobService {
     }
 
     // score = weighted average of AYS + AYB + (CSO/3) + HBP + (PCH * AYS / 260) + (MIS*12)
-    private float computeScore(Job job) {
+    public float computeScore(Job job) {
         int totalWeight = comparisonSettings.getTotalWeight();
         return job.getAdjustedYearlySalary() * comparisonSettings.getYearlySalaryWeight() / totalWeight +
                 job.getAdjustedYearlyBonus() * comparisonSettings.getYearlyBonusWeight() / totalWeight +
