@@ -3,10 +3,14 @@ package edu.gatech.seclass.jobcompare6300;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ComparisonSettingsActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,6 +22,7 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
     private EditText inputInternet;
 
     private JobCompareDatabase jobCompareDatabase;
+    private ComparisonSettings comparisonSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,6 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
 
-        //there are default values for weights
         inputYearlySalary = findViewById(R.id.editTextNumberYearlySalaryWeight);
         inputYearlyBonus = findViewById(R.id.editTextNumberYearlyBonusWeight);
         inputStock = findViewById(R.id.editTextNumberStockWeight);
@@ -34,14 +38,13 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
         inputHolidays = findViewById(R.id.editTextNumberHolidaysWeight);
         inputInternet = findViewById(R.id.editTextNumberInternetWeight);
 
-        int salaryWeight = Integer.parseInt(inputYearlySalary.getText().toString());
-        int bonusWeight = Integer.parseInt(inputYearlyBonus.getText().toString());
-        int stockWeight = Integer.parseInt(inputStock.getText().toString());
-        int homeFundWeight = Integer.parseInt(inputHomeFund.getText().toString());
-        int holidaysWeight = Integer.parseInt(inputHolidays.getText().toString());
-        int internetWeight = Integer.parseInt(inputInternet.getText().toString());
-
-        new RankJobService(jobCompareDatabase).adjustComparisonSettings(salaryWeight, bonusWeight, stockWeight, homeFundWeight, holidaysWeight, internetWeight);
+        comparisonSettings = ((MyApplication)getApplication()).getComparisonSettings();
+        inputYearlySalary.setText(String.valueOf(comparisonSettings.getYearlySalaryWeight()));
+        inputYearlyBonus.setText(String.valueOf(comparisonSettings.getYearlyBonusWeight()));
+        inputStock.setText(String.valueOf(comparisonSettings.getNumOfStockWeight()));
+        inputHomeFund.setText(String.valueOf(comparisonSettings.getHomeBuyingFundWeight()));
+        inputHolidays.setText(String.valueOf(comparisonSettings.getPersonalHolidaysWeight()));
+        inputInternet.setText(String.valueOf(comparisonSettings.getMonthlyInternetStipendWeight()));
 
         Button mainMenu = findViewById(R.id.buttonMainMenuComparisonSettings);
         Button reset = findViewById(R.id.buttonResetComparisonSettings);
@@ -52,6 +55,20 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
 
     public void onClick(View v) {
         if (v.getId() == R.id.buttonMainMenuComparisonSettings) {
+            int salaryWeight = Integer.parseInt(inputYearlySalary.getText().toString());
+            int bonusWeight = Integer.parseInt(inputYearlyBonus.getText().toString());
+            int stockWeight = Integer.parseInt(inputStock.getText().toString());
+            int homeFundWeight = Integer.parseInt(inputHomeFund.getText().toString());
+            int holidaysWeight = Integer.parseInt(inputHolidays.getText().toString());
+            int internetWeight = Integer.parseInt(inputInternet.getText().toString());
+            new RankJobService(jobCompareDatabase).adjustComparisonSettings(salaryWeight, bonusWeight, stockWeight, homeFundWeight, holidaysWeight, internetWeight);
+
+            comparisonSettings.setYearlySalaryWeight(salaryWeight);
+            comparisonSettings.setYearlyBonusWeight(bonusWeight);
+            comparisonSettings.setNumOfStockWeight(stockWeight);
+            comparisonSettings.setPersonalHolidaysWeight(holidaysWeight);
+            comparisonSettings.setMonthlyInternetStipendWeight(internetWeight);
+
             Intent intent = new Intent(ComparisonSettingsActivity.this, MainActivity.class);
             startActivity(intent);
         }else if(v.getId() == R.id.buttonResetComparisonSettings){
