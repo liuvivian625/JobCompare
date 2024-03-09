@@ -32,7 +32,7 @@ public class JobRankActivity extends AppCompatActivity {
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
 
-        RankJobService rankJobService = new RankJobService(jobCompareDatabase);
+        RankJobService rankJobService = ((MyApplication) getApplication()).getRankJobService();
         rankedJobs.addAll(rankJobService.rankJobOffers());
 
         int numChecked = 2; //user can only select 2 items
