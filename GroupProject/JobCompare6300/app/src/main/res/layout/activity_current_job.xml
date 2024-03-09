@@ -36,7 +36,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Title" />
+                android:text="Title"
+                android:inputType="none"/>
+
+
 
             <EditText
                 android:id="@+id/editTextTitleCurrentJob"
@@ -63,7 +66,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Company" />
+                android:text="Company"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextCompanyCurrentJob"
@@ -90,7 +94,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="City" />
+                android:text="City"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextCityCurrentJob"
@@ -110,7 +115,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="State" />
+                android:text="State"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextStateCurrentJob"
@@ -136,7 +142,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Cost of Living" />
+                android:text="Cost of Living"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextLivingCostCurrentJob"
@@ -163,7 +170,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Yearly Salary" />
+                android:text="Yearly Salary"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextYearlySalaryCurrentJob"
@@ -190,7 +198,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Yearly Bonus" />
+                android:text="Yearly Bonus"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextYearlyBonusCurrentJob"
@@ -217,7 +226,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="Stock Option Shares" />
+                android:text="Stock Option Shares"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextStockCurrentJob"
@@ -244,7 +254,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="Home Buying Fund" />
+                android:text="Home Buying Fund"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextHomeFundCurrentJob"
@@ -271,7 +282,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="Personal Choice Holidays" />
+                android:text="Personal Choice Holidays"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextHolidaysCurrentJob"
@@ -298,7 +310,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="Monthly Internet Stipend" />
+                android:text="Monthly Internet Stipend"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextInternetCurrentJob"

@@ -20,7 +20,8 @@
             <TextView
                 android:id="@+id/editTextText"
                 style="@style/BannerStyle"
-                android:text="Compare Jobs" />
+                android:text="Compare Jobs"
+                android:inputType="none"/>
 
 
             <TableLayout
@@ -37,7 +38,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         style="@style/TableHeaderWithBackground"
-                        android:text="Title" />
+                        android:text="Title"
+                        />
                 </TableRow>
 
                 <TableRow

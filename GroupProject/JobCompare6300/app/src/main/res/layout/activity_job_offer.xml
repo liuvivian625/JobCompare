@@ -35,7 +35,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Title" />
+            android:text="Title"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextTitleJobOffer"
@@ -62,7 +63,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Company" />
+            android:text="Company"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextCompanyJobOffer"
@@ -89,7 +91,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="City" />
+            android:text="City"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextCityJobOffer"
@@ -109,7 +112,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="State" />
+            android:text="State"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextStateJobOffer"
@@ -136,7 +140,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Cost of Living" />
+            android:text="Cost of Living"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextLivingCostJobOffer"
@@ -163,7 +168,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Yearly Salary" />
+            android:text="Yearly Salary"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextYearlySalaryJobOffer"
@@ -190,7 +196,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Yearly Bonus" />
+            android:text="Yearly Bonus"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextYearlyBonusJobOffer"
@@ -217,7 +224,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Stock Option Shares" />
+            android:text="Stock Option Shares"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextStockJobOffer"
@@ -244,7 +252,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Home Buying Fund" />
+            android:text="Home Buying Fund"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextHomeFundJobOffer"
@@ -271,7 +280,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Personal Choice Holidays" />
+            android:text="Personal Choice Holidays"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextHolidaysJobOffer"
@@ -298,7 +308,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Monthly Internet Stipend" />
+            android:text="Monthly Internet Stipend"
+            android:inputType="none"/>
 
         <EditText
             android:id="@+id/editTextInternetJobOffer"
