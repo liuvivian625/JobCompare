@@ -154,12 +154,12 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
             return false;
         }
         if(!Utils.ValidateStringInput(homeFundsString)){
-            inputHomeFund.setError("Please enter a number no more than 15.");
+            inputHomeFund.setError("Please enter a number between 0 and 15.");
             return false;
         }else{
             float homeFunds = Float.parseFloat(homeFundsString);
             if(!Utils.validateHomeBuyingFundPercentage(homeFunds)) {
-                inputHomeFund.setError("Please enter a number no more than 15.");
+                inputHomeFund.setError("Please enter a number between 0 and 15.");
                 return false;
             }
         }

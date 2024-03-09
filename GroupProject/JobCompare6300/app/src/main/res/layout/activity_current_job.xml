@@ -120,9 +120,6 @@
                 android:layout_weight="2"
                 android:ems="50"
                 android:inputType="text" />
-
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -148,7 +145,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:ems="50"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
         </LinearLayout>
 
@@ -229,7 +226,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:ems="50"
-                android:inputType="numberDecimal" />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -256,7 +253,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:ems="50"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
         </LinearLayout>
 
