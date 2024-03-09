@@ -4,7 +4,7 @@ import android.app.Application;
 
 public class MyApplication extends Application {
     private JobCompareDatabase jobCompareDatabase;
-    private ComparisonSettings comparisonSettings;
+    private RankJobService rankJobService;
 
     @Override
     public void onCreate() {
@@ -12,8 +12,7 @@ public class MyApplication extends Application {
         jobCompareDatabase = new JobCompareDatabase(this);
         jobCompareDatabase.resetDb();
 
-        int defaultWeight = Integer.parseInt(getResources().getString(R.string.default_weight));
-        comparisonSettings = new ComparisonSettings(defaultWeight,defaultWeight,defaultWeight,defaultWeight,defaultWeight,defaultWeight);
+        rankJobService = new RankJobService(jobCompareDatabase);
 
     }
 
@@ -21,6 +20,7 @@ public class MyApplication extends Application {
         return jobCompareDatabase;
     }
 
-    public ComparisonSettings getComparisonSettings(){return comparisonSettings;}
-
+    public RankJobService getRankJobService(){
+        return rankJobService;
+    }
 }

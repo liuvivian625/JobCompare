@@ -5,6 +5,7 @@ import java.util.List;
 
 public class RankJobService {
     private final JobCompareDatabase jobCompareDatabase;
+
     private ComparisonSettings comparisonSettings;
 
     public RankJobService(JobCompareDatabase jobCompareDatabase) {
@@ -63,5 +64,9 @@ public class RankJobService {
                 job.getHomeBuyingFundPercentage() * job.getYearlySalary() * comparisonSettings.getHomeBuyingFundWeight() / totalWeight +
                 job.getPersonalHolidays() * job.getAdjustedYearlySalary() / 260 * comparisonSettings.getPersonalHolidaysWeight() / totalWeight +
                 job.getMonthlyInternetStipend() * 12 * comparisonSettings.getMonthlyInternetStipendWeight() / totalWeight;
+    }
+
+    public ComparisonSettings getComparisonSettings() {
+        return comparisonSettings;
     }
 }

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
 
-        rankJobService = new RankJobService(jobCompareDatabase);
+        rankJobService = ((MyApplication) getApplication()).getRankJobService();
 
 
         Button currentJob = findViewById(R.id.buttonCurrentJob);

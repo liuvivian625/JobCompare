@@ -1,16 +1,12 @@
 package edu.gatech.seclass.jobcompare6300;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.HashMap;
-import java.util.Map;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ComparisonSettingsActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,6 +18,7 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
     private EditText inputInternet;
 
     private JobCompareDatabase jobCompareDatabase;
+    private RankJobService rankJobService;
     private ComparisonSettings comparisonSettings;
 
     @Override
@@ -30,6 +27,8 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
         setContentView(R.layout.activity_comparison_settings);
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
+        rankJobService = ((MyApplication) getApplication()).getRankJobService();
+        comparisonSettings = rankJobService.getComparisonSettings();
 
         inputYearlySalary = findViewById(R.id.editTextNumberYearlySalaryWeight);
         inputYearlyBonus = findViewById(R.id.editTextNumberYearlyBonusWeight);
@@ -38,7 +37,6 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
         inputHolidays = findViewById(R.id.editTextNumberHolidaysWeight);
         inputInternet = findViewById(R.id.editTextNumberInternetWeight);
 
-        comparisonSettings = ((MyApplication)getApplication()).getComparisonSettings();
         inputYearlySalary.setText(String.valueOf(comparisonSettings.getYearlySalaryWeight()));
         inputYearlyBonus.setText(String.valueOf(comparisonSettings.getYearlyBonusWeight()));
         inputStock.setText(String.valueOf(comparisonSettings.getNumOfStockWeight()));
