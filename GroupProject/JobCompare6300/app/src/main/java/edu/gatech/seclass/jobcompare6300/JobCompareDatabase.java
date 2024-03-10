@@ -44,7 +44,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String COLUMN_MONTHLY_INTERNET_STIPEND = "MONTHLY_INTERNET_STIPEND";
     public static final String COLUMN_IS_CURRENT_JOB = "IS_CURRENT_JOB";
 
-    public static final String COLUMN_COMPARISON_YEARLY = "YEARLY_SALARY_WEIGHT";
+    public static final String COLUMN_COMPARISON_SALARY = "YEARLY_SALARY_WEIGHT";
     public static final String COLUMN_COMPARISON_BONUS = "YEARLY_BONUS_WEIGHT";
     public static final String COLUMN_COMPARISON_SHARES = "NUM_SHARES_WEIGHT";
     public static final String COLUMN_COMPARISON_FUND = "HOME_BUYING_FUND_WEIGHT";
@@ -120,12 +120,12 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
         String createComparisonTB =
                 "CREATE TABLE " + TABLE_COMPARE +
-                        " (" + COLUMN_COMPARISON_YEARLY + " INTEGER, " +
+                        " (" + COLUMN_COMPARISON_SALARY + " INTEGER, " +
                         COLUMN_COMPARISON_BONUS + " INTEGER, " +
                         COLUMN_COMPARISON_SHARES + " INTEGER, " +
                         COLUMN_COMPARISON_FUND + " INTEGER, " +
                         COLUMN_COMPARISON_HOLIDAYS + " INTEGER, " +
-                        COLUMN_MONTHLY_INTERNET_STIPEND + " INTEGER);";
+                        COLUMN_COMPARISON_INTERNET + " INTEGER);";
 
         sqLiteDatabase.execSQL(createComparisonTB);
 
@@ -142,12 +142,12 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public void initializeComparisonTable(SQLiteDatabase sqLiteDatabase){
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_COMPARISON_YEARLY, 1);
+        cv.put(COLUMN_COMPARISON_SALARY, 1);
         cv.put(COLUMN_COMPARISON_BONUS, 1);
         cv.put(COLUMN_COMPARISON_SHARES, 1);
         cv.put(COLUMN_COMPARISON_FUND, 1);
         cv.put(COLUMN_COMPARISON_HOLIDAYS, 1);
-        cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, 1);
+        cv.put(COLUMN_COMPARISON_INTERNET, 1);
 
         long result = sqLiteDatabase.insert(TABLE_COMPARE, null, cv);
 
@@ -183,12 +183,12 @@ public class JobCompareDatabase extends SQLiteOpenHelper
             {
                 while (cursor.moveToNext())
                 {
-                    comparisonSettings.setYearlySalaryWeight(cursor.getInt(1));
-                    comparisonSettings.setYearlyBonusWeight(cursor.getInt(2));
-                    comparisonSettings.setNumOfStockWeight(cursor.getInt(3));
-                    comparisonSettings.setHomeBuyingFundWeight(cursor.getInt(4));
-                    comparisonSettings.setPersonalHolidaysWeight(cursor.getInt(5));
-                    comparisonSettings.setMonthlyInternetStipendWeight(cursor.getInt(6));
+                    comparisonSettings.setYearlySalaryWeight(cursor.getInt(0));
+                    comparisonSettings.setYearlyBonusWeight(cursor.getInt(1));
+                    comparisonSettings.setNumOfStockWeight(cursor.getInt(2));
+                    comparisonSettings.setHomeBuyingFundWeight(cursor.getInt(3));
+                    comparisonSettings.setPersonalHolidaysWeight(cursor.getInt(4));
+                    comparisonSettings.setMonthlyInternetStipendWeight(cursor.getInt(5));
                 }
             }
             cursor.close();
@@ -202,12 +202,12 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_COMPARISON_YEARLY, comparisonSettings.getYearlyBonusWeight());
+        cv.put(COLUMN_COMPARISON_SALARY, comparisonSettings.getYearlySalaryWeight());
         cv.put(COLUMN_COMPARISON_BONUS, comparisonSettings.getYearlyBonusWeight());
         cv.put(COLUMN_COMPARISON_SHARES, comparisonSettings.getNumOfStockWeight());
         cv.put(COLUMN_COMPARISON_FUND, comparisonSettings.getHomeBuyingFundWeight());
         cv.put(COLUMN_COMPARISON_HOLIDAYS, comparisonSettings.getPersonalHolidaysWeight());
-        cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, comparisonSettings.getMonthlyInternetStipendWeight());
+        cv.put(COLUMN_COMPARISON_INTERNET, comparisonSettings.getMonthlyInternetStipendWeight());
 
 
         long result = db.update(TABLE_COMPARE, cv, null, null);
