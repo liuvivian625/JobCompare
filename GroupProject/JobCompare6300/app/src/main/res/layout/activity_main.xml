@@ -20,7 +20,8 @@
         <TextView
             android:id="@+id/editTextText"
             style="@style/BannerStyle"
-            android:text="Job Compare"/>
+            android:text="Job Compare"
+            android:inputType="none"/>
 
         <Space
             android:layout_width="match_parent"

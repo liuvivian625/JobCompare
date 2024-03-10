@@ -26,9 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextFieldNameLeft"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="none"
             android:text="Weight" />
 
         <LinearLayout
@@ -43,7 +43,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Yearly Salary" />
+                android:text="Yearly Salary"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextNumberYearlySalaryWeight"
@@ -69,7 +70,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Yearly Bonus" />
+                android:text="Yearly Bonus"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextNumberYearlyBonusWeight"
@@ -95,7 +97,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Number of Stock Option Shares" />
+                android:text="Number of Stock Option Shares"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextNumberStockWeight"
@@ -121,7 +124,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Home Buying Program Fund" />
+                android:text="Home Buying Program Fund"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextNumberHomeFundWeight"
@@ -147,7 +151,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Personal Choice Holidays" />
+                android:text="Personal Choice Holidays"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextNumberHolidaysWeight"
@@ -173,7 +178,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Monthly Internet Stipend" />
+                android:text="Monthly Internet Stipend"
+                android:inputType="none"/>
 
             <EditText
                 android:id="@+id/editTextNumberInternetWeight"
