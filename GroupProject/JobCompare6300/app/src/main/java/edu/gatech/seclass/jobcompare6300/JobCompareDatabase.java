@@ -25,6 +25,8 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     //table name
     public static final String TABLE_NAME = "JOB_DETAILS";
 
+    public static final String TABLE_COMPARE = "COMPARISON_SETTINGS";
+
     // Attributes of the table job_details.
     public static final String COLUMN_JOB_ID = "JOB_ID";
     public static final String COLUMN_JOB_TITLE = "JOB_TITLE";
@@ -41,6 +43,13 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String COLUMN_HOLIDAYS = "HOLIDAYS";
     public static final String COLUMN_MONTHLY_INTERNET_STIPEND = "MONTHLY_INTERNET_STIPEND";
     public static final String COLUMN_IS_CURRENT_JOB = "IS_CURRENT_JOB";
+
+    public static final String COLUMN_COMPARISON_YEARLY = "YEARLY_SALARY_WEIGHT";
+    public static final String COLUMN_COMPARISON_BONUS = "YEARLY_BONUS_WEIGHT";
+    public static final String COLUMN_COMPARISON_SHARES = "NUM_SHARES_WEIGHT";
+    public static final String COLUMN_COMPARISON_FUND = "HOME_BUYING_FUND_WEIGHT";
+    public static final String COLUMN_COMPARISON_HOLIDAYS = "HOLIDAYS_WEIGHT";
+    public static final String COLUMN_COMPARISON_INTERNET = "INTERNET_STIPEND_WEIGHT";
 
     //Queries for getting data
     public static final String QUERY_FETCH_CURRENT_JOB = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_IS_CURRENT_JOB + " = 1";
@@ -106,6 +115,17 @@ public class JobCompareDatabase extends SQLiteOpenHelper
                         COLUMN_IS_CURRENT_JOB + " INTEGER);";
 
         sqLiteDatabase.execSQL(createDB);
+
+        String createComparisonTB =
+                "CREATE TABLE " + TABLE_COMPARE +
+                        " (" + COLUMN_COMPARISON_YEARLY + " INTEGER DEFAULT 1, " +
+                        COLUMN_COMPARISON_BONUS + " INTEGER DEFAULT 1, " +
+                        COLUMN_COMPARISON_SHARES + " INTEGER DEFAULT 1, " +
+                        COLUMN_COMPARISON_FUND + " INTEGER DEFAULT 1, " +
+                        COLUMN_COMPARISON_HOLIDAYS + " INTEGER DEFAULT 1, " +
+                        COLUMN_MONTHLY_INTERNET_STIPEND + " INTEGER DEFAULT 1);";
+
+        sqLiteDatabase.execSQL(createComparisonTB);
     }
 
     @Override
