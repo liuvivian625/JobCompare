@@ -10,8 +10,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         jobCompareDatabase = new JobCompareDatabase(this);
-        jobCompareDatabase.resetDb();
-
         rankJobService = new RankJobService(jobCompareDatabase);
 
     }
