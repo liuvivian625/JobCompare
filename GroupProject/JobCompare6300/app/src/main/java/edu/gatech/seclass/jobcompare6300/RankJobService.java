@@ -6,11 +6,8 @@ import java.util.List;
 public class RankJobService {
     private final JobCompareDatabase jobCompareDatabase;
 
-    private ComparisonSettings comparisonSettings;
-
     public RankJobService(JobCompareDatabase jobCompareDatabase) {
         this.jobCompareDatabase = jobCompareDatabase;
-        this.comparisonSettings = new ComparisonSettings(1, 1, 1, 1, 1, 1);
     }
 
     /**
@@ -24,8 +21,9 @@ public class RankJobService {
      */
     public void adjustComparisonSettings(int yearlySalaryWeight, int yearlyBonusWeight, int numOfStockWeight,
                                          int homeBuyingFundWeight, int personalHolidaysWeight, int monthlyInternetStipendWeight) {
-        comparisonSettings = new ComparisonSettings(yearlySalaryWeight, yearlyBonusWeight, numOfStockWeight,
+        ComparisonSettings toUpdate = new ComparisonSettings(yearlySalaryWeight, yearlyBonusWeight, numOfStockWeight,
                 homeBuyingFundWeight, personalHolidaysWeight, monthlyInternetStipendWeight);
+        jobCompareDatabase.updateComparisonSettings(toUpdate);
     }
 
     /**
@@ -57,6 +55,7 @@ public class RankJobService {
 
     // score = weighted average of AYS + AYB + (CSO/3) + HBP + (PCH * AYS / 260) + (MIS*12)
     public float computeScore(Job job) {
+        ComparisonSettings comparisonSettings = jobCompareDatabase.getCurrentComparisonSettings();
         int totalWeight = comparisonSettings.getTotalWeight();
         return job.getAdjustedYearlySalary() * comparisonSettings.getYearlySalaryWeight() / totalWeight +
                 job.getAdjustedYearlyBonus() * comparisonSettings.getYearlyBonusWeight() / totalWeight +
@@ -67,6 +66,6 @@ public class RankJobService {
     }
 
     public ComparisonSettings getComparisonSettings() {
-        return comparisonSettings;
+        return jobCompareDatabase.getCurrentComparisonSettings();
     }
 }
