@@ -6,7 +6,7 @@ public class Utils {
     }
 
     public static boolean validateHomeBuyingFundPercentage(float homeBuyingFundPercentage) {
-        return homeBuyingFundPercentage <= 15;
+        return homeBuyingFundPercentage <= 15 && homeBuyingFundPercentage>=0;
     }
 
     public static boolean validateCostOfLiving(float costOfLiving) {

@@ -59,27 +59,19 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
             int homeFundWeight = Integer.parseInt(inputHomeFund.getText().toString());
             int holidaysWeight = Integer.parseInt(inputHolidays.getText().toString());
             int internetWeight = Integer.parseInt(inputInternet.getText().toString());
-            new RankJobService(jobCompareDatabase).adjustComparisonSettings(salaryWeight, bonusWeight, stockWeight, homeFundWeight, holidaysWeight, internetWeight);
-
-            comparisonSettings.setYearlySalaryWeight(salaryWeight);
-            comparisonSettings.setYearlyBonusWeight(bonusWeight);
-            comparisonSettings.setNumOfStockWeight(stockWeight);
-            comparisonSettings.setPersonalHolidaysWeight(holidaysWeight);
-            comparisonSettings.setMonthlyInternetStipendWeight(internetWeight);
+            rankJobService.adjustComparisonSettings(salaryWeight, bonusWeight, stockWeight, homeFundWeight, holidaysWeight, internetWeight);
 
             Intent intent = new Intent(ComparisonSettingsActivity.this, MainActivity.class);
             startActivity(intent);
         }else if(v.getId() == R.id.buttonResetComparisonSettings){
             //reset to default value
-            String outputDefaultWeight = getResources().getString(R.string.default_weight);
-            inputYearlySalary.setText(outputDefaultWeight);
-            inputYearlyBonus.setText(outputDefaultWeight);
-            inputStock.setText(outputDefaultWeight);
-            inputHomeFund.setText(outputDefaultWeight);
-            inputHolidays.setText(outputDefaultWeight);
-            inputInternet.setText(outputDefaultWeight);
-            int defaultWeight = Integer.parseInt(outputDefaultWeight);
-            new RankJobService(jobCompareDatabase).adjustComparisonSettings(defaultWeight, defaultWeight, defaultWeight, defaultWeight, defaultWeight, defaultWeight);
+            inputYearlySalary.setText("1");
+            inputYearlyBonus.setText("1");
+            inputStock.setText("1");
+            inputHomeFund.setText("1");
+            inputHolidays.setText("1");
+            inputInternet.setText("1");
+            rankJobService.adjustComparisonSettings(1,1,1,1,1,1);
         }
     }
 

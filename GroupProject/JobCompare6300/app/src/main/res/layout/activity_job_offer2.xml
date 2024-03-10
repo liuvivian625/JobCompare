@@ -19,7 +19,8 @@
     <TextView
         android:id="@+id/editTextText"
         style="@style/BannerStyle"
-        android:text="Job Offers" />
+        android:text="Job Offers"
+        android:inputType="none"/>
 
     <Space
         android:layout_width="match_parent"
