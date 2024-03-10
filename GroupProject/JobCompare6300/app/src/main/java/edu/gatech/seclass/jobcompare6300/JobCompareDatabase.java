@@ -86,6 +86,8 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
     public static final String QUERY_RESET_DB = "DELETE FROM " + TABLE_NAME;
 
+    public static final String QUERY_FETCH_COMPARISON_SETTINGS = "SELECT * FROM " + TABLE_COMPARE;
+
     Logger logger = Logger.getLogger(JobCompareDatabase.class.getName());
 
     public JobCompareDatabase(@Nullable Context context) {
@@ -118,20 +120,106 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
         String createComparisonTB =
                 "CREATE TABLE " + TABLE_COMPARE +
-                        " (" + COLUMN_COMPARISON_YEARLY + " INTEGER DEFAULT 1, " +
-                        COLUMN_COMPARISON_BONUS + " INTEGER DEFAULT 1, " +
-                        COLUMN_COMPARISON_SHARES + " INTEGER DEFAULT 1, " +
-                        COLUMN_COMPARISON_FUND + " INTEGER DEFAULT 1, " +
-                        COLUMN_COMPARISON_HOLIDAYS + " INTEGER DEFAULT 1, " +
-                        COLUMN_MONTHLY_INTERNET_STIPEND + " INTEGER DEFAULT 1);";
+                        " (" + COLUMN_COMPARISON_YEARLY + " INTEGER, " +
+                        COLUMN_COMPARISON_BONUS + " INTEGER, " +
+                        COLUMN_COMPARISON_SHARES + " INTEGER, " +
+                        COLUMN_COMPARISON_FUND + " INTEGER, " +
+                        COLUMN_COMPARISON_HOLIDAYS + " INTEGER, " +
+                        COLUMN_MONTHLY_INTERNET_STIPEND + " INTEGER);";
 
         sqLiteDatabase.execSQL(createComparisonTB);
+
+        initializeComparisonTable(sqLiteDatabase);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
+    }
+
+    public void initializeComparisonTable(SQLiteDatabase sqLiteDatabase){
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_COMPARISON_YEARLY, 1);
+        cv.put(COLUMN_COMPARISON_BONUS, 1);
+        cv.put(COLUMN_COMPARISON_SHARES, 1);
+        cv.put(COLUMN_COMPARISON_FUND, 1);
+        cv.put(COLUMN_COMPARISON_HOLIDAYS, 1);
+        cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, 1);
+
+        long result = sqLiteDatabase.insert(TABLE_COMPARE, null, cv);
+
+        if (result == -1)
+        {
+            logger.log(Level.INFO, "ERROR: Could not insert into into comparison_settings table.");
+        }
+        else
+        {
+            logger.log(Level.INFO, "Added Comparison Settings Record Successfully");
+        }
+    }
+
+    public ComparisonSettings getCurrentComparisonSettings()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        ComparisonSettings comparisonSettings = new ComparisonSettings();
+
+        if (db != null)
+        {
+            cursor = db.rawQuery(QUERY_FETCH_COMPARISON_SETTINGS, null);
+        }
+
+        if (cursor != null)
+        {
+            if (cursor.getCount() == 0)
+            {
+                logger.log(Level.INFO, "ERROR: NO DATA when fetching Comparison Settings.");
+                throw new MissingCurrentJobException();
+            }
+            else
+            {
+                while (cursor.moveToNext())
+                {
+                    comparisonSettings.setYearlySalaryWeight(cursor.getInt(1));
+                    comparisonSettings.setYearlyBonusWeight(cursor.getInt(2));
+                    comparisonSettings.setNumOfStockWeight(cursor.getInt(3));
+                    comparisonSettings.setHomeBuyingFundWeight(cursor.getInt(4));
+                    comparisonSettings.setPersonalHolidaysWeight(cursor.getInt(5));
+                    comparisonSettings.setMonthlyInternetStipendWeight(cursor.getInt(6));
+                }
+            }
+            cursor.close();
+        }
+
+        return comparisonSettings;
+    }
+
+    public void updateComparisonSettings (ComparisonSettings comparisonSettings)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_COMPARISON_YEARLY, comparisonSettings.getYearlyBonusWeight());
+        cv.put(COLUMN_COMPARISON_BONUS, comparisonSettings.getYearlyBonusWeight());
+        cv.put(COLUMN_COMPARISON_SHARES, comparisonSettings.getNumOfStockWeight());
+        cv.put(COLUMN_COMPARISON_FUND, comparisonSettings.getHomeBuyingFundWeight());
+        cv.put(COLUMN_COMPARISON_HOLIDAYS, comparisonSettings.getPersonalHolidaysWeight());
+        cv.put(COLUMN_MONTHLY_INTERNET_STIPEND, comparisonSettings.getMonthlyInternetStipendWeight());
+
+
+        long result = db.update(TABLE_COMPARE, cv, null, null);
+
+        if (result == -1)
+        {
+            logger.log(Level.INFO, "ERROR: Could not update Comparison Settings in Comparison Settings table.");
+        }
+        else
+        {
+            logger.log(Level.INFO, "Updated Comparison Settings Successfully");
+        }
     }
 
     public void addJob(Job job)
@@ -158,11 +246,11 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
         if (result == -1)
         {
-            logger.log(Level.INFO, "ERROR: Could not insert into db.");
+            logger.log(Level.INFO, "ERROR: Could not insert into Job Compare Table.");
         }
         else
         {
-            logger.log(Level.INFO, "Added Successfully");
+            logger.log(Level.INFO, "Added Job Record Successfully");
         }
 
     }
@@ -191,7 +279,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
         if (result == -1)
         {
-            logger.log(Level.INFO, "ERROR: Could not update current job.");
+            logger.log(Level.INFO, "ERROR: Could not update current job in Job Compare table.");
         }
         else
         {
@@ -214,7 +302,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         {
             if (cursor.getCount() == 0)
             {
-                logger.log(Level.INFO, "ERROR: NO DATA");
+                logger.log(Level.INFO, "ERROR: NO DATA when fetching Current Job.");
                 throw new MissingCurrentJobException();
             }
             else
@@ -257,7 +345,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         {
             if (cursor.getCount() == 0)
             {
-                logger.log(Level.INFO, "ERROR: NO DATA");
+                logger.log(Level.INFO, "ERROR: NO DATA when fetching all jobs.");
             }
             else
             {

@@ -17,6 +17,10 @@ public class ComparisonSettings {
         this.monthlyInternetStipendWeight = monthlyInternetStipendWeight;
     }
 
+    public ComparisonSettings(){
+        //default constructor
+    }
+
     public int getYearlySalaryWeight() {
         return yearlySalaryWeight;
     }
