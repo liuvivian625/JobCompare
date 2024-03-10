@@ -44,7 +44,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public static final String COLUMN_MONTHLY_INTERNET_STIPEND = "MONTHLY_INTERNET_STIPEND";
     public static final String COLUMN_IS_CURRENT_JOB = "IS_CURRENT_JOB";
 
-    public static final String COLUMN_COMPARISON_YEARLY = "YEARLY_SALARY_WEIGHT";
+    public static final String COLUMN_COMPARISON_SALARY = "YEARLY_SALARY_WEIGHT";
     public static final String COLUMN_COMPARISON_BONUS = "YEARLY_BONUS_WEIGHT";
     public static final String COLUMN_COMPARISON_SHARES = "NUM_SHARES_WEIGHT";
     public static final String COLUMN_COMPARISON_FUND = "HOME_BUYING_FUND_WEIGHT";
@@ -120,7 +120,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
 
         String createComparisonTB =
                 "CREATE TABLE " + TABLE_COMPARE +
-                        " (" + COLUMN_COMPARISON_YEARLY + " INTEGER, " +
+                        " (" + COLUMN_COMPARISON_SALARY + " INTEGER, " +
                         COLUMN_COMPARISON_BONUS + " INTEGER, " +
                         COLUMN_COMPARISON_SHARES + " INTEGER, " +
                         COLUMN_COMPARISON_FUND + " INTEGER, " +
@@ -142,7 +142,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
     public void initializeComparisonTable(SQLiteDatabase sqLiteDatabase){
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_COMPARISON_YEARLY, 1);
+        cv.put(COLUMN_COMPARISON_SALARY, 1);
         cv.put(COLUMN_COMPARISON_BONUS, 1);
         cv.put(COLUMN_COMPARISON_SHARES, 1);
         cv.put(COLUMN_COMPARISON_FUND, 1);
@@ -202,7 +202,7 @@ public class JobCompareDatabase extends SQLiteOpenHelper
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_COMPARISON_YEARLY, comparisonSettings.getYearlySalaryWeight());
+        cv.put(COLUMN_COMPARISON_SALARY, comparisonSettings.getYearlySalaryWeight());
         cv.put(COLUMN_COMPARISON_BONUS, comparisonSettings.getYearlyBonusWeight());
         cv.put(COLUMN_COMPARISON_SHARES, comparisonSettings.getNumOfStockWeight());
         cv.put(COLUMN_COMPARISON_FUND, comparisonSettings.getHomeBuyingFundWeight());
