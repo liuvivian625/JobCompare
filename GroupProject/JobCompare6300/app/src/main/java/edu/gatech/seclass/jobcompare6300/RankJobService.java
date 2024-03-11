@@ -61,7 +61,7 @@ public class RankJobService {
                 job.getAdjustedYearlyBonus() * comparisonSettings.getYearlyBonusWeight() / totalWeight +
                 job.getNumShares() / 3f * comparisonSettings.getNumOfStockWeight() / totalWeight +
                 job.getHomeBuyingFundPercentage() * job.getYearlySalary() * comparisonSettings.getHomeBuyingFundWeight() / totalWeight +
-                job.getPersonalHolidays() * job.getAdjustedYearlySalary() / 260 * comparisonSettings.getPersonalHolidaysWeight() / totalWeight +
+                (job.getPersonalHolidays() * job.getAdjustedYearlySalary() / 260) * comparisonSettings.getPersonalHolidaysWeight() / totalWeight +
                 job.getMonthlyInternetStipend() * 12 * comparisonSettings.getMonthlyInternetStipendWeight() / totalWeight;
     }
 
