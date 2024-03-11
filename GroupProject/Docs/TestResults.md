@@ -36,7 +36,7 @@ Simulate the process of comparing job offers within the application, ensuring th
     - ![Comparison_settings](../Docs/images/E2E1/Comparison_settings.png)
 
 5. Perform the comparison.
-    - ![Final](../Docs/images/E2E1/Final.png)
+    - ![Final](../Docs/images/E2E1/FInal.png)
 
 ### Expected Results
 - The final comparison screen displays all entered data, including details of the current job and the added job offers.
@@ -81,7 +81,7 @@ Test the application to ensure that updates are correctly saved and reflected in
    - ![Job_offer_2](../Docs/images/E2E1/Job_offer_2.png)
 
 3. Check updates are saved and reflected in the comparison.
-   - ![Final](../Docs/images/E2E1/Final.png)
+   - ![Final](../Docs/images/E2E1/FInal.png)
 
 ### Expected Results
 - Updates made to job details are correctly saved and reflected in the comparison.
