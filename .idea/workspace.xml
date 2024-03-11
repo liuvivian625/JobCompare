@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9c143fa-6af0-445a-bc01-5976e95d7dbd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GroupProject/Weekly-Reports/vbaburaj6-d3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GroupProject/Docs/TestPlan.md" beforeDir="false" afterPath="$PROJECT_DIR$/GroupProject/Docs/TestPlan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/Docs/TestResults.md" beforeDir="false" afterPath="$PROJECT_DIR$/GroupProject/Docs/TestResults.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +29,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2dCdjJYj3i1GVo3COLQJEvXrD6C" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cf.first.check.clang-format": "false",
@@ -54,5 +57,16 @@
       <updated>1709516129231</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
