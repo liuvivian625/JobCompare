@@ -56,9 +56,6 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
         save.setOnClickListener(this);
         cancel.setOnClickListener(this);
 
-        //not working properly
-
-
         try{
             currentJob = jobService.FetchCurrentJob();
             inputTitle.setText(currentJob.getJobTitle());
@@ -76,7 +73,6 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
         catch(MissingCurrentJobException e){
             logger.log(Level.INFO, "Missing current Job");
         }
-
 
     }
 
@@ -158,12 +154,12 @@ public class CurrentJobActivity extends AppCompatActivity implements View.OnClic
             return false;
         }
         if(!Utils.ValidateStringInput(homeFundsString)){
-            inputHomeFund.setError("Please enter a number no more than 15.");
+            inputHomeFund.setError("Please enter a number between 0 and 15.");
             return false;
         }else{
             float homeFunds = Float.parseFloat(homeFundsString);
             if(!Utils.validateHomeBuyingFundPercentage(homeFunds)) {
-                inputHomeFund.setError("Please enter a number no more than 15.");
+                inputHomeFund.setError("Please enter a number between 0 and 15.");
                 return false;
             }
         }

@@ -5,11 +5,9 @@ import java.util.List;
 
 public class RankJobService {
     private final JobCompareDatabase jobCompareDatabase;
-    private ComparisonSettings comparisonSettings;
 
     public RankJobService(JobCompareDatabase jobCompareDatabase) {
         this.jobCompareDatabase = jobCompareDatabase;
-        this.comparisonSettings = new ComparisonSettings(1, 1, 1, 1, 1, 1);
     }
 
     /**
@@ -23,8 +21,9 @@ public class RankJobService {
      */
     public void adjustComparisonSettings(int yearlySalaryWeight, int yearlyBonusWeight, int numOfStockWeight,
                                          int homeBuyingFundWeight, int personalHolidaysWeight, int monthlyInternetStipendWeight) {
-        comparisonSettings = new ComparisonSettings(yearlySalaryWeight, yearlyBonusWeight, numOfStockWeight,
+        ComparisonSettings toUpdate = new ComparisonSettings(yearlySalaryWeight, yearlyBonusWeight, numOfStockWeight,
                 homeBuyingFundWeight, personalHolidaysWeight, monthlyInternetStipendWeight);
+        jobCompareDatabase.updateComparisonSettings(toUpdate);
     }
 
     /**
@@ -55,12 +54,18 @@ public class RankJobService {
     }
 
     // score = weighted average of AYS + AYB + (CSO/3) + HBP + (PCH * AYS / 260) + (MIS*12)
-    private float computeScore(Job job) {
-        return job.getAdjustedYearlySalary() * comparisonSettings.getYearlySalaryWeight()+
-                job.getAdjustedYearlyBonus() * comparisonSettings.getYearlyBonusWeight() +
-                job.getNumShares()/3 * comparisonSettings.getNumOfStockWeight() +
-                job.getHomeBuyingFundPercentage() * job.getYearlySalary() * comparisonSettings.getHomeBuyingFundWeight() +
-                job.getPersonalHolidays() * job.getAdjustedYearlySalary() / 260 * comparisonSettings.getPersonalHolidaysWeight() +
-                job.getMonthlyInternetStipend() * 12 * comparisonSettings.getMonthlyInternetStipendWeight();
+    public float computeScore(Job job) {
+        ComparisonSettings comparisonSettings = jobCompareDatabase.getCurrentComparisonSettings();
+        int totalWeight = comparisonSettings.getTotalWeight();
+        return job.getAdjustedYearlySalary() * comparisonSettings.getYearlySalaryWeight() / totalWeight +
+                job.getAdjustedYearlyBonus() * comparisonSettings.getYearlyBonusWeight() / totalWeight +
+                job.getNumShares() / 3f * comparisonSettings.getNumOfStockWeight() / totalWeight +
+                job.getHomeBuyingFundPercentage() * job.getYearlySalary() * comparisonSettings.getHomeBuyingFundWeight() / totalWeight +
+                (job.getPersonalHolidays() * job.getAdjustedYearlySalary() / 260) * comparisonSettings.getPersonalHolidaysWeight() / totalWeight +
+                job.getMonthlyInternetStipend() * 12 * comparisonSettings.getMonthlyInternetStipendWeight() / totalWeight;
+    }
+
+    public ComparisonSettings getComparisonSettings() {
+        return jobCompareDatabase.getCurrentComparisonSettings();
     }
 }

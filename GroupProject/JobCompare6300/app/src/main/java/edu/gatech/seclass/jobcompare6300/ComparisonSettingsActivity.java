@@ -1,12 +1,12 @@
 package edu.gatech.seclass.jobcompare6300;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ComparisonSettingsActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,6 +18,8 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
     private EditText inputInternet;
 
     private JobCompareDatabase jobCompareDatabase;
+    private RankJobService rankJobService;
+    private ComparisonSettings comparisonSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,9 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
         setContentView(R.layout.activity_comparison_settings);
 
         jobCompareDatabase = ((MyApplication) getApplication()).getJobCompareDatabase();
+        rankJobService = ((MyApplication) getApplication()).getRankJobService();
+        comparisonSettings = rankJobService.getComparisonSettings();
 
-        //there are default values for weights
         inputYearlySalary = findViewById(R.id.editTextNumberYearlySalaryWeight);
         inputYearlyBonus = findViewById(R.id.editTextNumberYearlyBonusWeight);
         inputStock = findViewById(R.id.editTextNumberStockWeight);
@@ -34,14 +37,12 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
         inputHolidays = findViewById(R.id.editTextNumberHolidaysWeight);
         inputInternet = findViewById(R.id.editTextNumberInternetWeight);
 
-        int salaryWeight = Integer.parseInt(inputYearlySalary.getText().toString());
-        int bonusWeight = Integer.parseInt(inputYearlyBonus.getText().toString());
-        int stockWeight = Integer.parseInt(inputStock.getText().toString());
-        int homeFundWeight = Integer.parseInt(inputHomeFund.getText().toString());
-        int holidaysWeight = Integer.parseInt(inputHolidays.getText().toString());
-        int internetWeight = Integer.parseInt(inputInternet.getText().toString());
-
-        new RankJobService(jobCompareDatabase).adjustComparisonSettings(salaryWeight, bonusWeight, stockWeight, homeFundWeight, holidaysWeight, internetWeight);
+        inputYearlySalary.setText(String.valueOf(comparisonSettings.getYearlySalaryWeight()));
+        inputYearlyBonus.setText(String.valueOf(comparisonSettings.getYearlyBonusWeight()));
+        inputStock.setText(String.valueOf(comparisonSettings.getNumOfStockWeight()));
+        inputHomeFund.setText(String.valueOf(comparisonSettings.getHomeBuyingFundWeight()));
+        inputHolidays.setText(String.valueOf(comparisonSettings.getPersonalHolidaysWeight()));
+        inputInternet.setText(String.valueOf(comparisonSettings.getMonthlyInternetStipendWeight()));
 
         Button mainMenu = findViewById(R.id.buttonMainMenuComparisonSettings);
         Button reset = findViewById(R.id.buttonResetComparisonSettings);
@@ -52,19 +53,25 @@ public class ComparisonSettingsActivity extends AppCompatActivity implements Vie
 
     public void onClick(View v) {
         if (v.getId() == R.id.buttonMainMenuComparisonSettings) {
+            int salaryWeight = Integer.parseInt(inputYearlySalary.getText().toString());
+            int bonusWeight = Integer.parseInt(inputYearlyBonus.getText().toString());
+            int stockWeight = Integer.parseInt(inputStock.getText().toString());
+            int homeFundWeight = Integer.parseInt(inputHomeFund.getText().toString());
+            int holidaysWeight = Integer.parseInt(inputHolidays.getText().toString());
+            int internetWeight = Integer.parseInt(inputInternet.getText().toString());
+            rankJobService.adjustComparisonSettings(salaryWeight, bonusWeight, stockWeight, homeFundWeight, holidaysWeight, internetWeight);
+
             Intent intent = new Intent(ComparisonSettingsActivity.this, MainActivity.class);
             startActivity(intent);
         }else if(v.getId() == R.id.buttonResetComparisonSettings){
             //reset to default value
-            String outputDefaultWeight = getResources().getString(R.string.default_weight);
-            inputYearlySalary.setText(outputDefaultWeight);
-            inputYearlyBonus.setText(outputDefaultWeight);
-            inputStock.setText(outputDefaultWeight);
-            inputHomeFund.setText(outputDefaultWeight);
-            inputHolidays.setText(outputDefaultWeight);
-            inputInternet.setText(outputDefaultWeight);
-            int defaultWeight = Integer.parseInt(outputDefaultWeight);
-            new RankJobService(jobCompareDatabase).adjustComparisonSettings(defaultWeight, defaultWeight, defaultWeight, defaultWeight, defaultWeight, defaultWeight);
+            inputYearlySalary.setText("1");
+            inputYearlyBonus.setText("1");
+            inputStock.setText("1");
+            inputHomeFund.setText("1");
+            inputHolidays.setText("1");
+            inputInternet.setText("1");
+            rankJobService.adjustComparisonSettings(1,1,1,1,1,1);
         }
     }
 
