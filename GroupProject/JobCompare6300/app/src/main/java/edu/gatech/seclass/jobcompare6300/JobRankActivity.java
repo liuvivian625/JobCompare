@@ -68,7 +68,7 @@ public class JobRankActivity extends AppCompatActivity {
             if(job.isCurrentJob()){
                 outputTitle.setTextColor(getResources().getColor(R.color.text_highlight));
                 outputCompany.setTextColor(getResources().getColor(R.color.text_highlight));
-                outputTitle.setTextColor(getResources().getColor(R.color.text_highlight));
+                outputScore.setTextColor(getResources().getColor(R.color.text_highlight));
             }
 
             row.addView(outputTitle);
